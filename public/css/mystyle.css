@@ -1,0 +1,43 @@
+.imagenCab{
+    -webkit-filter: blur(4px);filter: blur(4px);
+}
+.logo{
+    width:50px;
+    padding-top:6px;
+}
+#nomCamp{
+    font-family: 'Permanent Marker', cursive;
+}
+#nomInsc{
+    font-family: 'Pacifico', cursive;
+}
+#opciones{
+    min-width: 160px;
+}
+.dropdown-content{
+    min-width: 160px;
+    position: absolute;
+    border:solid;
+    
+}
+#menuH{
+    position:fixed;
+    right:0px;
+    top:2px;
+    height:50px;
+    box-shadow: 0px 0px 0px #888888;
+
+}
+.tabs .indicator{
+    background-color:#0277bd;
+}
+input[type=email]:focus:not([readonly])+label{
+    color:#1565c0;
+   
+}
+input#email.validate{
+   
+}
+.validate:active{
+    border-color:blue;
+}

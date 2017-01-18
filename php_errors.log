@@ -1,0 +1,2 @@
+[16-Dec-2016 11:37:11 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 32768 bytes) in /home/ubuntu/workspace/storage/framework/views/82ce4810cc43d475da65137a82f6b956bd019073.php on line 1
+[16-Dec-2016 11:37:12 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 16384 bytes) in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/View/Factory.php on line 543
