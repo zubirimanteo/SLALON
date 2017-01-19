@@ -23,18 +23,14 @@ Route::get('/landing', function () {
     
 });
 
-Route::get('/participantes', function (){
-    return view('participantes');
-});
-
 Route::get('/clubes', function () {
     return view('clubes');
     
 });
 
-Route::get('/logout', function () {
-    Auth::logout();
-    return view('inicio');
+Route::get('/descensos', function () {
+    return view('descensos');
+    
 });
 
 // Route::get('/admin', function () {
@@ -44,6 +40,11 @@ Route::get('/logout', function () {
 
 Auth::routes();
 
+Route::get('/logout', function () {
+    Auth::logout();
+    return view('inicio');
+});
+
 Route::get('/home', 'HomeController@index');
 
 //ruta funzionau berko zun recibirDatos?datuak=igor bezela baino recibirDatosController jarri ber da
@@ -52,3 +53,11 @@ Route::get('/recibirDatos{datuak}', 'RecibirDatos@recibir');
 //rutas de pusher real time
 Route::get('/notifications', 'NotificationController@getIndex');
 Route::post('/notifications', 'NotificationController@postNotify');
+
+//rutas de acceso a DB
+//ruta para coger piraguistas
+Route::get('/participantes', 'GetAllPiraguistas@getPiraguistas');
+//ruta para crear piragustas
+Route::post('/crear/piraguista', 'InscripccionControler@createPiraguista')->name('create.piraguista');
+//ruta para coger descensos
+Route::get('/descensos', 'GetAllDescensos@getDescensos');

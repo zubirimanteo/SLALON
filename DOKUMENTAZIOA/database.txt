@@ -1,0 +1,43 @@
+DATABASE
+
+USER: igoreslein
+pass: (sin contraseña)
+
+database: c9
+
+para iniciar mysql
+
+bash$ mysql-ctl cli
+https://proyect76-igoreslein.c9users.io/phpmyadmin/
+introducir user y sin pass
+
+nombre database: slalom
+
+create table balizas
+(ID_Baliza int auto_increment, 
+Penalizaciones boolean, 
+Correcto boolean, 
+PRIMARY KEY(ID_Baliza));
+
+create table participantes
+(ID_Participante int auto_increment, 
+Nombre varchar(20), 
+Apellido_1 varchar(20), 
+Apellido_2 varchar(20), 
+Club varchar(100), 
+Fecha_Nacimiento date, 
+PRIMARY KEY (ID_Participante));
+
+create table carrera
+(ID_Carrera int auto_increment, 
+Tiempo time, Penalizaciones time, 
+ID_Participante int, 
+PRIMARY KEY(ID_Carrera), 
+FOREIGN KEY (ID_Participante) 
+REFERENCES participantes(ID_Participante));
+
+create table usuarios
+(User varchar(50), 
+Password varchar(20), 
+Admin boolean, 
+PRIMARY KEY(User));

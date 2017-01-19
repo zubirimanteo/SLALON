@@ -22,7 +22,8 @@ class CreateTablePiraguistas extends Migration
             $table->string('genero');
             $table->string('club');
             $table->string('nacionalidad');
-            $table->integer('dorsal');
+            $table->integer('dorsal')->nullable();
+            $table->string('avatar');
             $table->timestamps();
             
         });

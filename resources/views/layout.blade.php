@@ -21,21 +21,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 <script type="text/javascript" src="/js/animation.js"></script>
 
-<!--script para el pusher-->
-<script src="//js.pusher.com/3.0/pusher.min.js"></script>
-<script>
-Pusher.log = function(msg) {
-  console.log(msg);
-};
-
-var pusher = new Pusher("{{env('PUSHER_KEY')}}");
-var channel = pusher.subscribe('test-channel');
-channel.bind('test-event', function(data) {
-  alert(data.text);
-});
-</script>
-<!--fin del script de pusher-->
-
 <!--Script prueba crono hecho por juank-->
 <script type="text/javascript">
     
