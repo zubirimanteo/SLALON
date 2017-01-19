@@ -45,3 +45,5 @@ class InscripccionControler extends Controller
         return redirect('/participantes');
     }
 }
+
+//
