@@ -13,11 +13,6 @@ use Illuminate\Support\Facades\App;
 |
 */
 
-Route::get('/', function () {
-    return view('inicio');
-    
-});
-
 Route::get('/landing', function () {
     return view('landing');
     
@@ -33,16 +28,12 @@ Route::get('/descensos', function () {
     
 });
 
-// Route::get('/admin', function () {
-//     return view('admin');
-// });
-
 
 Auth::routes();
 
 Route::get('/logout', function () {
     Auth::logout();
-    return view('inicio');
+    return redirect('/');
 });
 
 Route::get('/home', 'HomeController@index');
@@ -57,7 +48,10 @@ Route::post('/notifications', 'NotificationController@postNotify');
 //rutas de acceso a DB
 //ruta para coger piraguistas
 Route::get('/participantes', 'GetAllPiraguistas@getPiraguistas');
+//ruta para mostrar las carreras __Juank__
+Route::get('/', 'GetAllCarreras@getCarreras');
 //ruta para crear piragustas
 Route::post('/crear/piraguista', 'InscripccionControler@createPiraguista')->name('create.piraguista');
 //ruta para coger descensos
 Route::get('/descensos', 'GetAllDescensos@getDescensos');
+

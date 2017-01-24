@@ -9,11 +9,14 @@ class GetAllDescensos extends Controller
 {
     public function getDescensos(){
         
-        $descensos = DB::table('descensos')->get();
-        // $results = DB::select('select * from descensos where id = :id', ['id' => 1]);
-        $piraguistas = DB::table('piraguistas')->get();
         
-        return view('descensos', compact('descensos','piraguistas'));
+        $descensos = DB::table('descensos')
+        ->join('piraguistas', 'descensos.id_piraguista', '=', 'piraguistas.id_piraguista')
+        ->join('carrera', 'descensos.id_carrera', '=', 'carrera.id_carrera')
+        ->where('carrera.id_carrera', '=', 1)
+        ->get();
+        
+        return view('descensos',['descensos' => $descensos]);
         
     }
 }

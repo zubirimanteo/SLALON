@@ -20,6 +20,7 @@
 <!--<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 <script type="text/javascript" src="/js/animation.js"></script>
+<script type="text/javascript" src="/js/animation-1.js"></script>
 
 <!--Script prueba crono hecho por juank-->
 <script type="text/javascript">
@@ -106,9 +107,6 @@
        @yield('content')
     
     </main>
-   
-
-    
     <!--FOOTER-->
     <footer class="page-footer light-blue darken-3">
       <div class="container">
@@ -126,6 +124,5 @@
           </div>
     </footer>
     <!--FOOTER-->
-
 </body>
 </html>

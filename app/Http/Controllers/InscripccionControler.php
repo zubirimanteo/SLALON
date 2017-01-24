@@ -19,6 +19,7 @@ class InscripccionControler extends Controller
             'nacionalidad' =>'required',
             'genero' =>'required',
             'avatar' =>'required',
+            'carrera' =>'required'
             
         ]);
     
@@ -41,7 +42,9 @@ class InscripccionControler extends Controller
             $arrayAvatarCorrect = '/' . $arrayAvatar[0] . '/' . $arrayAvatar[1] . '/' . $arrayAvatar[2];
             $piraguista->update([
                 'avatar' => $arrayAvatarCorrect
-            ]);            
+            ]); 
+        
+        
         return redirect('/participantes');
     }
 }

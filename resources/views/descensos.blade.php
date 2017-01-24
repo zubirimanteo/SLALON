@@ -1,5 +1,54 @@
-@extends('layouts.app')
+@extends('layout')
 @section('navbar')
+<nav>
+    <div class="nav-wrapper light-blue darken-3">
+        <a href="#" id="menuH2" data-activates="mobile-demo" class=" fixed-action btn-floating menu button-collapse right btn-flat"><i class="material-icons" id="iconMenu">menu</i></a>
+        <a href="#!" class="brand-logo center "><img src="/imgs/Logo.png" class="logo"></a>
+        
+        <ul class="left hide-on-med-and-down">
+             @if (auth::guest())
+            <li><a href="{{ url('/') }}">Inicio</a></li>
+            <li><a href="{{ url('/participantes') }}">Participantes</a></li>
+            <li><a href="{{ url('/descensos') }}">Descensos</a></li>
+            @else
+            <li><a href="{{ url('/') }}">Inicio</a></li>
+            <li><a href="{{ url('/participantes') }}">Participantes</a></li>
+            <li><a href="{{ url('/descensos') }}">Descensos</a></li>
+            <li><a href="{{ url('/clubes') }}">Inscripción</a></li>
+            <li><a href="#!">Participantes Inscritos</a></li>
+            @endif
+        </ul>
+        @if (auth::guest())
+        <ul class="right hide-on-med-and-down">
+          <li><a href="{{ url('/login') }}" class="waves-effect waves-light btn light-blue darken-1">Login</a></li>
+        </ul>
+        @else
+        <ul class="right hide-on-med-and-down">
+          <li><a href="{{ url('/logout') }}" class="waves-effect waves-light btn light-blue darken-1">Log out</a></li>
+        </ul>
+        @endif
+        @if (auth::guest())
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="{{ url('/')}}">Inicio</a></li>
+          <li><a href="{{ url('/participantes') }}">Participantes</a></li>
+          <li><a href="{{ url('/descensos') }}">Descensos</a></li>
+          <li class="divider"></li>
+          <li><a href="{{ url('/login') }}" class="waves-effect waves-blue blue-text text-darken-4 ">Login</a></li>
+        </ul>
+        @else
+        
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="{{ url('/') }}">Inicio</a></li>
+          <li><a href="{{ url('/participantes') }}">Participantes</a></li>
+          <li><a href="{{ url('/descensos') }}">Descensos</a></li>
+          <li><a href="{{ url('/clubes') }}!">Inscripción</a></li>
+          <li><a href="#!">Participantes Inscritos</a></li>
+          <li class="divider"></li>
+          <li><a href="{{ url('/logout') }}" class="waves-effect waves-light blue-text text-darken-4 ">Log out</a></li>
+        </ul>
+        @endif
+    </div>
+</nav>
 @stop
 @section('content')
 <div class="section cuerpo  light-blue lighten-5">
@@ -18,7 +67,6 @@
                             <td data-field="id"><strong>Nombre</strong></td>
                             <td data-field="number"><strong>Tiempo</strong></td>
                             <td data-field="number"><strong>Penalización</strong></td>
-                            <td><button class="btn" id="table-add"><i class="material-icons">library_add</i></button></td>
                             @endif
                       </tr>
                     </tbody>
@@ -30,29 +78,27 @@
               <table class="centered">
                  <tbody>
                   <tr>
-                    <td contenteditable="true">Empty</td>
+                    <td contenteditable="false">Empty</td>
                     <td>00:00</td>
-                    <td>+<span contenteditable="true">00:00</span></td>
+                    <td>+<span contenteditable="false">00</span>:<span contenteditable="false">00</span></td>
                     <td><button class="btn  table-remove"><i class="material-icons">delete</i></button></td>
                   </tr>
                 </tbody>
               </table>
             </li>
-            @foreach ($piraguistas as $p)
-                @foreach ($descensos as $d)
+            @foreach ($descensos as $d)
             <li class="collection-item avatar">
-                <img  src="{{$p->avatar}}" alt="" class="circle materialboxed">
+                <img  src="{{$d->avatar}}" alt="" class="circle materialboxed">
                 <table class="centered">
                  <tbody>
                   <tr>
-                    <td>{{$p->nombre}} {{$p->apellido}} {{$p->apellido2}}</td>
+                    <td class="edit" contenteditable="false">{{$d->nombre}} {{$d->apellido}} {{$d->apellido2}}</td>
                     <td>{{$d->tiempo}}</td>
-                    <td>{{$p->nacionalidad}}</td>
+                    <td>+<span class="edit" contenteditable="false">00</span>:<span class="edit" contenteditable="false">00</span></td>
                   </tr>
                 </tbody>
               </table>
             </li>
-                @endforeach
             @endforeach
 
             <!------------------------------->
@@ -60,28 +106,12 @@
                 
             </li>
         </ul>
-     </div><!--editable-->
-    
-    <button id="export-btn" class="btn ">Export Data</button>
-    <button id="editar-btn" class="btn ">Editar</button>
-      <p id="export"></p>
+    </div><!--editable-->
+     @if (auth::guest())
+     @else
+        <button id="editar-btn" class="btn blue">Editar <i class="material-icons">mode_edit</i></button>
+    @endif
    
 </div>
-
-<footer class="page-footer light-blue darken-3">
-      <div class="container">
-            <div class="row">
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Contacto</h5>
-                <ul>
-                  <h6><li><a class="grey-text text-lighten-3" href="https://twitter.com/SlasportSP"> <i class="icon-twitter"> @SlasportSP </i></a></li></h6>
-                  <h6><li><a class="grey-text text-lighten-3" href="#!"> <i class="icon-facebook"></i> Slasport</a></li></h6>
-                  <h6><li><a class="grey-text text-lighten-3" href="#!"><i class="material-icons">phone</i> 666-666-666</a></li></h6>
-                </ul>
-
-              </div>
-            </div>
-      </div>
-</footer>
 
 @stop

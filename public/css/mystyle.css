@@ -42,12 +42,27 @@ input[type=password]:focus:not([readonly]){
     box-shadow: 0 1px 0 0 #0288d1;
    
 }
-
+input[type=text]:focus:not([readonly]){
+    border-bottom: 1px solid #0091ea;
+    box-shadow: 0 1px 0 0 #0091ea;
+}
+input[type=text]:focus:not([readonly])+label{
+    color:#0091ea;
+}
+[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:after {
+    background-color: #0091ea ;
+}
+[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after {
+    border: 2px solid #006064 ;
+}
+.input-field .prefix.active{
+    color:#0091ea ;
+} 
 .validate:active{
     border-color:blue;
 }
 .linkM:hover{
-    color:white;
+    color:orange;
     text-decoration: none;
 }
 .linkM:visited{
@@ -74,9 +89,7 @@ form{
     padding:50px;
     
 }
-.card{
-   padding:50px;
-}
+
 .form-group{
     padding-top: 25px;
 
@@ -98,5 +111,36 @@ td, th{
     width: 205px;
 }
 .cuerpo{
-    height:100%;
+    height:auto;
+}
+footer.page-footer {
+    margin-top: 0px;
+    padding-top: 0px;
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+  .inscripcion{
+    padding:50px;
+    width:65%;
+    height:auto;
+    background:#FFF;
+    margin:40px auto;
+    webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+    -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+    box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+  }
+  #enviarD{
+     padding-top:50px;
+     float:right;
+  }
+  .row .col {
+    margin-top: 50px;
+  
 }

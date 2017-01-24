@@ -20,9 +20,15 @@ class RecibirDatos extends Controller
         $dv = $all['dv'];
         $ts = $all['ts'];
         
-       // $text = $request['clave'];
         $pusher = App::make('pusher');
+        
+        if($id == 1){
         $pusher->trigger('my-channel', 'my-event', $id); 
+        }
+        else{
+        $pusher->trigger('my-channel', 'my-event', $ts);     
+        }
+        
         // $piraguistas = DB::table('piraguistas')->value('id_piraguista');
         // var_dump($piraguistas);
         // if($id = 1){
