@@ -22,11 +22,4 @@ class GetAllDescensos extends Controller
         
     }
 
-    public function sendId(){
-        
-        $id = $_GET["id_carrera"];
-        
-        return $id;
-        
-    }
 }
