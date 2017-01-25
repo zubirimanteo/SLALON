@@ -16,6 +16,7 @@
 </head>
 <body class="blue-grey lighten-5">
 <!--scripts-->
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <!--<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
@@ -108,7 +109,12 @@
     
     </main>
     <!--FOOTER-->
-    <footer class="page-footer light-blue darken-3">
+    <div class="section scrollspy light-blue darken-3">
+      <h5 id="nomCamp"> Patrocinadores</h5>
+      <img src="/imgs/layout_set_logo.jpg" class="pat1">
+      <img src="/imgs/zubiri.png" class="pat2">
+    </div>
+    <footer class="page-footer scrollspy  light-blue darken-4">
       <div class="container">
             <div class="row">
               <div class="col l4 offset-l2 s12">

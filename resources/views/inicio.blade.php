@@ -17,7 +17,7 @@
             <li><a href="{{ url('/participantes') }}">Participantes</a></li>
             <li><a href="{{ url('/descensos') }}">Descensos</a></li>
             <li><a href="{{ url('/clubes') }}">Inscripción</a></li>
-            <li><a href="#!">Inscritos</a></li>
+            <li><a href="{{ url('/inscritos') }}">Participantes Inscritos</a></li>
             @endif
         </ul>
         @if (auth::guest())
@@ -43,8 +43,8 @@
           <li><a href="{{ url('/') }}">Inicio</a></li>
           <li><a href="{{ url('/participantes') }}">Participantes</a></li>
           <li><a href="{{ url('/descensos') }}">Descensos</a></li>
-          <li><a href="{{ url('/clubes') }}!">Inscripción</a></li>
-          <li><a href="#!">Inscritos</a></li>
+          <li><a href="{{ url('/clubes') }}">Inscripción</a></li>
+          <li><a href="{{ url('/inscritos') }}">Participantes Inscritos</a></li>
           <li class="divider"></li>
           <li><a href="{{ url('/logout') }}" class="waves-effect waves-light blue-text text-darken-4 ">Log out</a></li>
         </ul>
@@ -60,32 +60,28 @@
         <div class="section no-pad-bot">
           <div class="container">
             <br><br> <br><br>
-            <h1 id="nomCamp" class=" header bold center blue-text text-darken-4 ">SlaSport</h1>
+            <h1 id="nomCampa" class=" header bold center titulo blue-text text-darken-4 ">SlaSport</h1>
           </div>
         </div>
         <div class="parallax"><img class="imagenCab"  src="/imgs/rio.gif"></div>
       </div>
   </div>
   
-<div class="section center yellow lighten-4">
+<div class="section center light-blue darken-2">
   <h2 id="nomCamp"> Últimas Carreras</h2>
   <div class="row">
   @foreach ($carreras as $carrera)
         <div class="col s4">
           <div class="card">
             <div class="card-image">
-              <img src="imgs/4.jpg">
-              <span class="card-title"><a href="{{ url('/descensos')}}?id_carrera={{$carrera->id_carrera}}" id="nomCamp" class="card-action orange-text text-darken-4" >{{$carrera->lugar}} {{$carrera->id_carrera}}</a></span>
+              <img src="imgs/4.jpg" >
+              <span class="card-title"><a href="{{ url('/descensos')}}?id_carrera={{$carrera->id_carrera}}" id="nomCamp" class="card-action orange-text text-darken-4" >{{$carrera->lugar}}</a></span>
             </div>
           </div>
         </div>
   @endforeach
   </div> 
 </div>
-<div class="section yellow darken-4">
-  <h5 id="nomCamp"> Patrocinadores</h5>
-  <img src="/imgs/layout_set_logo.jpg">
-  <img src="/imgs/zubiri.png">
-</div>
+
 @stop
 

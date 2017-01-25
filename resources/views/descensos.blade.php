@@ -8,7 +8,7 @@
         <ul class="left hide-on-med-and-down">
              @if (auth::guest())
             <li><a href="{{ url('/') }}">Inicio</a></li>
-            <li><a href="{{ url('/participantes') }}">Participantes</a></li>
+            <li><a href="{{ url('/participantes') }}?id_carrera={{$id}}">Participantes</a></li>
             <li><a href="{{ url('/descensos') }}">Descensos</a></li>
             @else
             <li><a href="{{ url('/') }}">Inicio</a></li>

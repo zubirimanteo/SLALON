@@ -14,4 +14,10 @@ class GetAllCarreras extends Controller
         
         return view('inicio', ['carreras' => $carreras]);
     }
+    
+    public function getOneCarreratoAddInscription(){
+        $carrera =DB::table('carrera')->get();
+        
+        return view('clubes',['carrera' => $carrera]);
+    }
 }

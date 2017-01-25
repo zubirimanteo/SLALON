@@ -8,6 +8,14 @@
 
 #nomCamp{
     font-family: 'Permanent Marker', cursive;
+    -webkit-text-stroke: 0.9px black;
+}
+.header{
+    font-size: 100px;
+    -webkit-text-stroke: 2.5px black;
+}
+#nomCampa{
+    font-family: 'Permanent Marker', cursive;
 }
 #nomInsc{
     font-family: 'Pacifico', cursive;
@@ -121,12 +129,12 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-  }
+ }
 
-  main {
+main {
     flex: 1 0 auto;
-  }
-  .inscripcion{
+}
+.inscripcion{
     padding:50px;
     width:65%;
     height:auto;
@@ -135,12 +143,29 @@ body {
     webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
     -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
     box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
-  }
-  #enviarD{
-     padding-top:50px;
-     float:right;
-  }
-  .row .col {
+}
+.inscritos{
+    padding:50px;
+    width:75%;
+    height:auto;
+    background:#FFF;
+    margin:40px auto;
+    webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+    -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+    box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+}
+#enviarD{
+    padding-top:50px;
+    float:right;
+}
+.row .col {
     margin-top: 50px;
-  
+}
+.pat1{
+    width: 235px;
+    
+}
+.pat2{
+    width: 75px;
+    
 }

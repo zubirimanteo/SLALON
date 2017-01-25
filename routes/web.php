@@ -27,6 +27,10 @@ Route::get('/descensos', function () {
     return view('descensos');
     
 });
+Route::get('/inscritos', function () {
+    return view('inscritos');
+    
+});
 
 
 Auth::routes();
@@ -50,8 +54,15 @@ Route::post('/notifications', 'NotificationController@postNotify');
 Route::get('/participantes', 'GetAllPiraguistas@getPiraguistas');
 //ruta para mostrar las carreras __Juank__
 Route::get('/', 'GetAllCarreras@getCarreras');
+Route::get('/clubes', 'GetAllCarreras@getOneCarreratoAddInscription');
 //ruta para crear piragustas
 Route::post('/crear/piraguista', 'InscripccionControler@createPiraguista')->name('create.piraguista');
 //ruta para coger descensos
 Route::get('/descensos', 'GetAllDescensos@getDescensos');
 
+
+
+
+
+
+?>

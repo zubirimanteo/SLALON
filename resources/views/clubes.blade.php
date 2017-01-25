@@ -4,7 +4,7 @@
 
 <nav>
     <div class="nav-wrapper light-blue darken-3">
-        <a href="#" id="menuH2" data-activates="mobile-demo" class="button-collapse btn-floating rigth btn-flat fixed-action "><i class="material-icons" id="iconMenu">menu</i></a>
+        <a href="#" id="menuH2" data-activates="mobile-demo" class="button-collapse btn-floating right btn-flat fixed-action "><i class="material-icons" id="iconMenu">menu</i></a>
         <a href="#!" class="brand-logo center "><img src="/imgs/Logo.png" class="logo"></a>
         
         <ul class="left hide-on-med-and-down">
@@ -12,7 +12,7 @@
             <li><a href="{{ url('/participantes') }}">Participantes</a></li>
             <li><a href="{{ url('/descensos') }}">Descensos</a></li>
             <li><a href="{{ url('/clubes') }}">Inscripción</a></li>
-            <li><a href="">Participantes Inscritos</a></li>
+            <li><a href="{{ url('/inscritos')}}">Participantes Inscritos</a></li>
             
         </ul>
         <ul class="right hide-on-med-and-down">
@@ -23,7 +23,7 @@
             <li><a href="{{ url('/participantes') }}">Participantes</a></li>
             <li><a href="{{ url('/descensos') }}">Descensos</a></li>
             <li><a href="{{ url('/clubes')}}">Inscripción</a></li>
-            <li><a href="#!">Participantes Inscritos</a></li>
+            <li><a href="{{ url('/inscritos')}}">Participantes Inscritos</a></li>
             <li class="divider"></li>
             <li><a href="{{ url('/logout') }}" class="waves-effect waves-light blue-text text-darken-4 ">Log out</a></li>
         </ul>
@@ -118,9 +118,9 @@
         <div class="input-field col s6 offset-s3">
           <select class="browser-default s6 offset-s3">
             <option value="" disabled selected>Elija la Carrera</option>
-            
-            <option name"carrera" value="1"></option>
-
+            @foreach($carrera as $carreras)
+            <option name"carrera" value="{{$carreras->id_carrera}}">{{$carreras -> lugar}}</option>
+            @endforeach
           </select>
         </div>
         <form  id="enviarD"  class="input-field col s5 offset-s4 ">
