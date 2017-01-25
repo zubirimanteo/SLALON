@@ -67,7 +67,7 @@
       </div>
   </div>
   
-<div class="section center blue darcken-2">
+<div class="scrollsp section center blue darcken-2">
   <h2 id="nomCamp"> Últimas Carreras</h2>
   <div class="row">
   @foreach ($carreras as $carrera)
