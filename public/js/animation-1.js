@@ -17,14 +17,16 @@ $(document).ready(function(){
     $('.table-remove').click(function () {
       $(this).parents('li').detach();
     });
-    $(window).on('scroll', function() {
-    var y_scroll_pos = window.pageYOffset;
-    var scroll_pos_test = 150;             // set to whatever you want it to be
-
-    if(y_scroll_pos > scroll_pos_test) {
-        //do stuff
-    }
-});
+   
+    $('.scrollsp').on('scrollSpy:enter', function() {//when scrolling and element showing in window
+    $(this).toggle();
+    });
+    
+    // $('.scrollsp').on('scrollSpy:exit', function() {//when scrolling and element exit at window
+    //     $(this).fadeOut();
+    // });
+    
+    $('.scrollsp').scrollSpy();
   
   
 });
