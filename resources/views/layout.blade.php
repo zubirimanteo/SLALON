@@ -114,7 +114,7 @@
       <img src="/imgs/layout_set_logo.jpg" class="pat1">
       <img src="/imgs/zubiri.png" class="pat2">
     </div>
-    <footer class="page-footer scrollsp  light-blue darken-4">
+    <footer class="page-footer light-blue darken-4">
       <div class="container">
             <div class="row">
               <div class="col l4 offset-l2 s12">

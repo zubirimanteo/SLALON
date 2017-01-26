@@ -59,6 +59,10 @@ Route::get('/clubes', 'GetAllCarreras@getOneCarreratoAddInscription');
 Route::post('/crear/piraguista', 'InscripccionControler@createPiraguista')->name('create.piraguista');
 //ruta para coger descensos
 Route::get('/descensos', 'GetAllDescensos@getDescensos');
+Route::get('/descensosrt', 'GetAllDescensos@lastDescensos');
+
+
+
 
 
 

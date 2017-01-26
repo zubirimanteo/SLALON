@@ -18,15 +18,7 @@ $(document).ready(function(){
       $(this).parents('li').detach();
     });
    
-    $('.scrollsp').on('scrollSpy:enter', function() {//when scrolling and element showing in window
-    $(this).toggle();
-    });
-    
-    // $('.scrollsp').on('scrollSpy:exit', function() {//when scrolling and element exit at window
-    //     $(this).fadeOut();
-    // });
-    
-    $('.scrollsp').scrollSpy();
+  
   
   
 });

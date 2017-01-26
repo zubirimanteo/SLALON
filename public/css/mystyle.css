@@ -130,6 +130,10 @@ body {
     min-height: 100vh;
     flex-direction: column;
  }
+.titleside{
+font-family: 'Permanent Marker', cursive;  
+-webkit-text-stroke: .5px black;
+}
 
 main {
     flex: 1 0 auto;

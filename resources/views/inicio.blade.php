@@ -31,6 +31,13 @@
         @endif
         @if (auth::guest())
         <ul class="side-nav" id="mobile-demo">
+          <li><div class="userView">
+            <div class="background">
+              <img src="imgs/4.jpg">
+            </div>
+            <a href="#!user"><img class="circle" src="/imgs/Logo.png"></a>
+            <a href="#!name"><span class="titleside white-text  name">Slasport</span></a>
+          </div></li>
           <li><a href="{{ url('/')}}">Inicio</a></li>
           <li><a href="{{ url('/participantes') }}">Participantes</a></li>
           <li><a href="{{ url('/descensos') }}">Descensos</a></li>
@@ -67,7 +74,7 @@
       </div>
   </div>
   
-<div class="scrollsp section center blue darcken-2">
+<div class="section center blue darcken-2">
   <h2 id="nomCamp"> Últimas Carreras</h2>
   <div class="row">
   @foreach ($carreras as $carrera)
