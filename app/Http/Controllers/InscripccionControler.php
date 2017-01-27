@@ -32,10 +32,9 @@ class InscripccionControler extends Controller
             'genero' => $request->genero,
             'avatar' => $request->avatar->store('/public/avatars'),
         ]);
-        // $piraguista = Piraguista::where('nombre', $request->nombre)->
-        //                     where('apellido', $request->apellido)->
-        //                     where('apellido2', $request->apellido2)->
-        //                     first();
+        
+        
+        
                             
         $arrayAvatar = explode("/", $piraguista->avatar);
             $arrayAvatar[0] = 'storage';

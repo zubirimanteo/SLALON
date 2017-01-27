@@ -11,11 +11,12 @@
     -webkit-text-stroke: 0.9px black;
 }
 .header{
-    font-size: 100px;
+    font-size: 79px;
     -webkit-text-stroke: 2.5px black;
 }
 #nomCampa{
     font-family: 'Permanent Marker', cursive;
+    -webkit-text-stroke: 2.5px black;
 }
 #nomInsc{
     font-family: 'Pacifico', cursive;
@@ -172,4 +173,35 @@ main {
 .pat2{
     width: 75px;
     
+}
+.iconos{
+   -webkit-text-stroke: 2.5px black; 
+}
+h4{
+    -webkit-text-stroke: 1.5px black;
+    font-family: 'Permanent Marker', cursive;
+}
+footer.page-footer .footer-copyright{
+    background-color: rgba(54,54,54,.3);
+}
+.icon-twitter:before {
+    content: "\f099";
+    font-size: 24px;
+}
+.icon-facebook:before {
+    content: "\f09a";
+    font-size: 24px;
+}
+#letternav{
+    font-family: 'Permanent Marker';
+}
+.cuerpo{
+   padding:50px;
+    width:75%;
+    height:auto;
+    background:#FFF;
+    margin:40px auto;
+    webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+    -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
+    box-shadow:0 0px 4px #777, 0 0 20px #CCC inset; 
 }

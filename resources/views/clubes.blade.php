@@ -3,7 +3,7 @@
 @section('navbar')
 
 <nav>
-    <div class="nav-wrapper light-blue darken-3">
+    <div  id="letternav"  class="nav-wrapper light-blue darken-3">
         <a href="#" id="menuH2" data-activates="mobile-demo" class="button-collapse btn-floating right btn-flat fixed-action "><i class="material-icons" id="iconMenu">menu</i></a>
         <a href="#!" class="brand-logo center "><img src="/imgs/Logo.png" class="logo"></a>
         
@@ -16,7 +16,7 @@
             
         </ul>
         <ul class="right hide-on-med-and-down">
-          <li><a href="{{ url('/logout') }}" class="waves-effect waves-light btn light-blue darken-1">Log out</a></li>
+          <li><a  id="letternav" href="{{ url('/logout') }}" class="waves-effect waves-light btn light-blue darken-1">Log out</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
             <li><a href="{{ url('/') }}" id="home">Inicio</a></li>
@@ -119,7 +119,7 @@
           <select class="browser-default s6 offset-s3">
             <option value="" disabled selected>Elija la Carrera</option>
             @foreach($carrera as $carreras)
-            <option name"carrera" value="{{$carreras->id_carrera}}">{{$carreras -> lugar}}</option>
+            <option name"carrera" value="{{$carreras->id_carrera}}">{{$carreras -> lugar}}</option> 
             @endforeach
           </select>
         </div>

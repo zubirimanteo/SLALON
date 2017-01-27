@@ -7,7 +7,7 @@
         <a href="#" id="menuH2" data-activates="mobile-demo" class=" fixed-action btn-floating menu button-collapse right btn-flat"><i class="material-icons" id="iconMenu">menu</i></a>
         <a href="#!" class="brand-logo center "><img src="/imgs/Logo.png" class="logo"></a>
         
-        <ul class="left hide-on-med-and-down">
+        <ul id="letternav" class="left hide-on-med-and-down">
              @if (auth::guest())
             <li><a href="{{ url('/') }}">Inicio</a></li>
             <li><a href="{{ url('/participantes') }}">Participantes</a></li>
@@ -55,16 +55,17 @@
 
 @section('content')
 
+<div class="section cuerpo">
 <h1 id="nomCamp" class="header bold center blue-text text-darken-4 ">Participantes</h1>
 
 <ul class="collection large">
     <li class="collection-item avatar">
-        <i class="material-icons circle">perm_identity</i>
+        <i class="material-icons circle white">perm_identity</i>
         <table class="centered">
             <tbody>
               <tr> 
-                  <th data-field="dorsal">Dorsal</th>
-                  <th data-field="nombre">Nombre y Apellidos</th>
+                  <th data-field="dorsal">Nombre</th>
+                  <th data-field="nombre">Apellidos</th>
                   <th data-field="club">Club</th>
                   <th data-field="nacionalidad">Nacionalidad</th>
               </tr>
@@ -72,15 +73,14 @@
         </table>
     </li>
     <br>
-
 @foreach ($users as $user)
     <li class="collection-item avatar">
         <img  src="{{$user->avatar}}" alt="" class="circle materialboxed">
         <table class="centered">
          <tbody>
           <tr>
-            <td class="dorsal">{{$user->dorsal}}</td>
-            <td>{{$user->nombre}} {{$user->apellido}} {{$user->apellido2}}</td>
+            <td>{{$user->nombre}}</td>
+            <td>{{$user->apellido}} {{$user->apellido2}}</td>
             <td>{{$user->club}}</td>
             <td>{{$user->nacionalidad}}</td>
           </tr>
@@ -89,4 +89,6 @@
     </li>
 @endforeach
 </ul>
+
+</div>
 @stop

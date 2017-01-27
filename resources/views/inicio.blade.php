@@ -7,7 +7,7 @@
         <a href="#" id="menuH2" data-activates="mobile-demo" class=" fixed-action btn-floating menu button-collapse right btn-flat"><i class="material-icons" id="iconMenu">menu</i></a>
         <a href="#!" class="brand-logo center "><img src="/imgs/Logo.png" class="logo"></a>
         
-        <ul class="left hide-on-med-and-down">
+        <ul id="letternav" class="left hide-on-med-and-down">
              @if (auth::guest())
             <li><a href="{{ url('/') }}">Inicio</a></li>
             <li><a href="{{ url('/participantes') }}">Participantes</a></li>

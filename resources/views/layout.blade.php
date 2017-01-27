@@ -109,25 +109,39 @@
     
     </main>
     <!--FOOTER-->
-    <div class="section scrollsp light-blue darken-3">
-      <h5 id="nomCamp"> Patrocinadores</h5>
-      <img src="/imgs/layout_set_logo.jpg" class="pat1">
-      <img src="/imgs/zubiri.png" class="pat2">
-    </div>
-    <footer class="page-footer light-blue darken-4">
+    <!--<div class="section scrollsp light-blue darken-3">-->
+    <!--  <h5 id="nomCamp"> Patrocinadores</h5>-->
+    <!--  <img src="/imgs/layout_set_logo.jpg" class="pat1">-->
+    <!--  <img src="/imgs/zubiri.png" class="pat2">-->
+    <!--</div>-->
+    <footer class="page-footer blue darken-4">
       <div class="container">
             <div class="row">
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Contacto</h5>
-                <ul>
-                  <h6><li><a class="grey-text text-lighten-3" href="https://twitter.com/SlasportSP"> <i class="icon-twitter"> @SlasportSP </i></a></li></h6>
-                  <h6><li><a class="grey-text text-lighten-3" href="#!"> <i class="icon-facebook"></i> Slasport</a></li></h6>
-                  <h6><li><a class="grey-text text-lighten-3" href="#!"><i class="material-icons">phone</i> 666-666-666</a></li></h6>
+              <div class="col s3 center">
+                <!--<i class="large material-icons blue-grey-text text-lighten-3 iconos">person</i>-->
+                <h4 class="blue-grey-text text-lighten-3 ">¿Quiénes Somos?</h4>
+                <p class="blue-grey-text text-lighten-3">
+                  Somos un grupo de estudiantes de dos Instituciones diferentes
+                  Zubiri Manteo y Don Bosco. 
+                </p>
+              </div>
+              <div class="col s3 offset-s6 center ">
+                <h4 class="blue-grey-text text-lighten-3">Contáctanos:</h4>
+                <ul class=" blue-grey-text text-lighten-3 contacto" >
+                  <h6><li><a class="blue-grey-text text-lighten-3" href="https://twitter.com/SlasportSP"> <i class="icon-twitter"></i>  @SlasportSP </a></li></h6>
+                  <h6><li><a class="blue-grey-text text-lighten-3" href="#!"><i class="icon-facebook"></i> Slasport</a></li></h6>
+                  <h6><li><a class="blue-grey-text text-lighten-3" href="#!"><i class="material-icons">phone</i> 666-666-666</a></li></h6>
                 </ul>
 
               </div>
             </div>
           </div>
+      <div class="footer-copyright">
+        <div class="container center">
+          © 2016 - 2017 Slasport
+          <a class="grey-text text-lighten-4 right" href="#!"></a>
+        </div>
+      </div>
     </footer>
     <!--FOOTER-->
 </body>

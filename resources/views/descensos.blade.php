@@ -5,7 +5,7 @@
         <a href="#" id="menuH2" data-activates="mobile-demo" class=" fixed-action btn-floating menu button-collapse right btn-flat"><i class="material-icons" id="iconMenu">menu</i></a>
         <a href="#!" class="brand-logo center "><img src="/imgs/Logo.png" class="logo"></a>
         
-        <ul class="left hide-on-med-and-down">
+        <ul id="letternav" class=" left hide-on-med-and-down">
              @if (auth::guest())
             <li><a href="{{ url('/') }}">Inicio</a></li>
             <li><a href="{{ url('/participantes') }}">Participantes</a></li>
@@ -15,16 +15,16 @@
             <li><a href="{{ url('/participantes') }}">Participantes</a></li>
             <li><a href="{{ url('/descensos') }}">Descensos</a></li>
             <li><a href="{{ url('/clubes') }}">Inscripción</a></li>
-            <li><a href="#!">Participantes Inscritos</a></li>
+            <li><a href="{{ url('/inscritos') }}">Participantes Inscritos</a></li>
             @endif
         </ul>
         @if (auth::guest())
         <ul class="right hide-on-med-and-down">
-          <li><a href="{{ url('/login') }}" class="waves-effect waves-light btn light-blue darken-1">Login</a></li>
+          <li><a  id="letternav" href="{{ url('/login') }}" class="waves-effect waves-light btn light-blue darken-1">Login</a></li>
         </ul>
         @else
         <ul class="right hide-on-med-and-down">
-          <li><a href="{{ url('/logout') }}" class="waves-effect waves-light btn light-blue darken-1">Log out</a></li>
+          <li><a  id="letternav" href="{{ url('/logout') }}" class="waves-effect waves-light btn light-blue darken-1">Log out</a></li>
         </ul>
         @endif
         @if (auth::guest())
@@ -33,7 +33,7 @@
           <li><a href="{{ url('/participantes') }}">Participantes</a></li>
           <li><a href="{{ url('/descensos') }}">Descensos</a></li>
           <li class="divider"></li>
-          <li><a href="{{ url('/login') }}" class="waves-effect waves-blue blue-text text-darken-4 ">Login</a></li>
+          <li><a  href="{{ url('/login') }}" class="waves-effect waves-blue blue-text text-darken-4 ">Login</a></li>
         </ul>
         @else
         
@@ -51,7 +51,7 @@
 </nav>
 @stop
 @section('content')
-<div class="section cuerpo  light-blue lighten-5">
+<div class="section cuerpo  ">
     <h1 id="nomCamp" class="header center blue-text text-darken-4">Descensos</h1>
         <ul class="collection large">
             <li class="collection-item avatar">
@@ -60,11 +60,11 @@
                     <tbody>
                       <tr>  
                             @if (auth::guest())
-                            <td data-field="id"><strong>Nombre</strong></td>
+                            <td data-field="id"><strong>Nombre y Apellidos</strong></td>
                             <td data-field="number"><strong>Tiempo</strong></td>
                             <td data-field="number"><strong>Penalización</strong></td>
                             @else
-                            <td data-field="id"><strong>Nombre</strong></td>
+                            <td data-field="id"><strong>Nombre y Apellidos</strong></td>
                             <td data-field="number"><strong>Tiempo</strong></td>
                             <td data-field="number"><strong>Penalización</strong></td>
                             @endif

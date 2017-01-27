@@ -7,7 +7,7 @@
         <a href="#" id="menuH2" data-activates="mobile-demo" class="button-collapse btn-floating right btn-flat fixed-action "><i class="material-icons" id="iconMenu">menu</i></a>
         <a href="#!" class="brand-logo center "><img src="/imgs/Logo.png" class="logo"></a>
         
-        <ul class="left hide-on-med-and-down">
+        <ul id="letternav" class="left hide-on-med-and-down">
             <li><a href="{{ url('/') }}" id="home">Inicio</a></li>
             <li><a href="{{ url('/participantes') }}">Participantes</a></li>
             <li><a href="{{ url('/descensos') }}">Descensos</a></li>
@@ -37,7 +37,37 @@
 <div class="row inscritos">
     
     <center><h1 id="nomCamp">Participantes Inscritos</h1></center>
-        
+    <ul class="collection large">
+    <li class="collection-item avatar">
+        <i class="material-icons circle white-text">perm_identity</i>
+        <table class="centered">
+            <tbody>
+              <tr> 
+                  <th data-field="dorsal">Nombre</th>
+                  <th data-field="nombre">Apellidos</th>
+                  <th data-field="club">Club</th>
+                  <th data-field="nacionalidad">Nacionalidad</th>
+              </tr>
+            </tbody>
+        </table>
+    </li>
+    <br>
+     @foreach ($inscritos as $i)
+    <li class="collection-item avatar">
+        <img  src="{{$i->avatar}}" alt="" class="circle materialboxed">
+        <table class="centered">
+         <tbody>
+          <tr>
+            <td>{{$i->nombre}}</td>
+            <td>{{$i->apellido}} {{$i->apellido2}}</td>
+            <td>{{$i->club}}</td>
+            <td>{{$i->nacionalidad}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+@endforeach
+    </ul>
 </div>
 
 @stop
