@@ -18,13 +18,14 @@ class CreateTableDescensos extends Migration
             $table->increments('id_descenso')->unsigned();    
             $table->integer('id_carrera')->unsigned();
             $table->foreign('id_carrera')
-                  ->references('id_carrera')->on('carrera')
+                  ->references('id_carrera')->on('carreras')
                   ->onDelete('cascade');
             $table->integer('id_piraguista')->unsigned();
             $table->foreign('id_piraguista')
                   ->references('id_piraguista')->on('piraguistas')
                   ->onDelete('cascade');
             $table->time('tiempo');
+            $table->timestamps();
             
         });
     }

@@ -33,7 +33,7 @@
         
         var channel = pusher.subscribe('my-channel');
         
-        channel.bind('my-event', function(data) {
+        channel.bind('getConsulta', function(data) {
             alert(data);
         });
     </script>

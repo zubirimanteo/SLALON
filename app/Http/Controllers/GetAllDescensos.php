@@ -16,8 +16,8 @@ class GetAllDescensos extends Controller
             
             $descensos = DB::table('descensos')
             ->join('piraguistas', 'descensos.id_piraguista', '=', 'piraguistas.id_piraguista')
-            ->join('carrera', 'descensos.id_carrera', '=', 'carrera.id_carrera')
-            ->where('carrera.id_carrera', '=', $id )
+            ->join('carreras', 'descensos.id_carrera', '=', 'carreras.id_carrera')
+            ->where('carreras.id_carrera', '=', $id )
             ->get();
         
             return view('descensos',compact('descensos','id'));
@@ -44,9 +44,9 @@ class GetAllDescensos extends Controller
         
         $descensos = DB::table('descensos')
         ->join('piraguistas', 'descensos.id_piraguista', '=', 'piraguistas.id_piraguista')
-        ->join('carrera', 'descensos.id_carrera', '=', 'carrera.id_carrera')
-        ->where('carrera.fecha_inicio', '<=', $fecha)
-        ->where('carrera.fecha_final', '>=', $fecha)
+        ->join('carreras', 'descensos.id_carrera', '=', 'carreras.id_carrera')
+        ->where('carreras.fecha_inicio', '<=', $fecha)
+        ->where('carreras.fecha_final', '>=', $fecha)
         ->get();
         
         return view('descensos', ['descensos'=>$descensos]);

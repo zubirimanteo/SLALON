@@ -22,11 +22,13 @@ class RecibirDatos extends Controller
         
         $pusher = App::make('pusher');
         
+        
         if($id == 1){
-        $pusher->trigger('my-channel', 'my-event', $id); 
+        $pusher->trigger('my-channel', 'eventoCarga', $id); 
+        // $contador++;
         }
         else{
-        $pusher->trigger('my-channel', 'my-event', $ts);     
+        $pusher->trigger('my-channel', 'eventoStop', $id);
         }
         
         // $piraguistas = DB::table('piraguistas')->value('id_piraguista');

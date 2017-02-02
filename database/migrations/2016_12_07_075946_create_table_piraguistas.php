@@ -23,7 +23,7 @@ class CreateTablePiraguistas extends Migration
             $table->string('club');
             $table->string('nacionalidad');
             $table->integer('dorsal')->nullable();
-            $table->string('avatar');
+            $table->string('avatar_piraguista');
             $table->timestamps();
             
         });

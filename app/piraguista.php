@@ -12,7 +12,7 @@ class Piraguista extends Model
     }
     
     protected $fillable = [
-        'nombre', 'apellido', 'apellido2', 'telefono', 'club', 'nacionalidad','genero', 'avatar',
+        'nombre', 'apellido', 'apellido2', 'telefono', 'club', 'nacionalidad','genero', 'avatar_piraguista',
     ];
     protected $primaryKey = 'id_piraguista';
 }

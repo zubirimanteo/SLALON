@@ -13,7 +13,7 @@ class CreateTableCarrera extends Migration
      */
     public function up()
     {
-        Schema::create('carrera', function (Blueprint $table) {
+        Schema::create('carreras', function (Blueprint $table) {
             
             $table->increments('id_carrera')->unsigned();
             $table->date('fecha_inicio');
@@ -21,6 +21,8 @@ class CreateTableCarrera extends Migration
             $table->string('lugar');
             $table->string('categoria');
             $table->string('distancia');
+            $table->string('avatar_carrera');
+            $table->timestamps();
             
         });
     }
@@ -32,6 +34,6 @@ class CreateTableCarrera extends Migration
      */
     public function down()
     {
-        Schema::drop('carrera');
+        Schema::drop('carreras');
     }
 }

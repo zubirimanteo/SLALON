@@ -10,4 +10,8 @@ class carrera extends Model
     {
         return $this->hasMany('descensos');
     }
+    protected $fillable = [
+        'lugar','fecha_inicio','fecha_final','categoria','distancia','avatar_carrera',
+    ];
+    protected $primaryKey = 'id_carrera';
 }

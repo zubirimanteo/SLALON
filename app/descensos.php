@@ -8,7 +8,7 @@ class descensos extends Model
 {
     public function carrera()
     {
-        return $this->belongsTo('carrera');
+        return $this->belongsTo('carreras');
     }
     public function piraguistas()
     {
@@ -18,4 +18,8 @@ class descensos extends Model
     {
         return $this->hasMany('tablanm');
     }
+    protected $fillable = [
+        'carrera'
+    ];
+    protected $primaryKey = 'id_descenso';
 }

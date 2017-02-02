@@ -17,6 +17,7 @@ class CreateTableBaliza extends Migration
             
             $table->primary('id_baliza');
             $table->integer('id_baliza')->unsigned();
+            $table->boolean('remonte');
             
         });
     }

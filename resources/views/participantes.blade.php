@@ -17,16 +17,16 @@
             <li><a href="{{ url('/participantes') }}">Participantes</a></li>
             <li><a href="{{ url('/descensos') }}">Descensos</a></li>
             <li><a href="{{ url('/clubes') }}">Inscripción</a></li>
-            <li><a href="#!">Inscritos</a></li>
+            <li><a href="{{ url('/inscritos') }}">Inscritos</a></li>
             @endif
         </ul>
         @if (auth::guest())
         <ul class="right hide-on-med-and-down">
-          <li><a href="{{ url('/login') }}" class="waves-effect waves-light btn light-blue darken-1">Login</a></li>
+          <li><a href="{{ url('/login') }}" id="letternav" class="waves-effect waves-light btn light-blue darken-1">Login</a></li>
         </ul>
         @else
         <ul class="right hide-on-med-and-down">
-          <li><a href="{{ url('/logout') }}" class="waves-effect waves-light btn light-blue darken-1">Log out</a></li>
+          <li><a href="{{ url('/logout') }}" id="letternav" class="waves-effect waves-light btn light-blue darken-1">Log out</a></li>
         </ul>
         @endif
         @if (auth::guest())
@@ -64,7 +64,8 @@
         <table class="centered">
             <tbody>
               <tr> 
-                  <th data-field="dorsal">Nombre</th>
+                  <th data-field="" hidden >id_piraguista</th>
+                  <th data-field="">Nombre</th>
                   <th data-field="nombre">Apellidos</th>
                   <th data-field="club">Club</th>
                   <th data-field="nacionalidad">Nacionalidad</th>
@@ -74,11 +75,12 @@
     </li>
     <br>
 @foreach ($users as $user)
-    <li class="collection-item avatar">
-        <img  src="{{$user->avatar}}" alt="" class="circle materialboxed">
+    <li class="collection-item avatar ">
+        <img  src="{{$user->avatar_piraguista}}" alt="" class="circle materialboxed">
         <table class="centered">
          <tbody>
           <tr>
+            <td hidden>{{$user->id_piraguista}}</td>
             <td>{{$user->nombre}}</td>
             <td>{{$user->apellido}} {{$user->apellido2}}</td>
             <td>{{$user->club}}</td>

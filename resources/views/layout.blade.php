@@ -22,15 +22,40 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 <script type="text/javascript" src="/js/animation.js"></script>
 <script type="text/javascript" src="/js/animation-1.js"></script>
-
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="//js.pusher.com/3.0/pusher.min.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 <!--Script prueba crono hecho por juank-->
 <script type="text/javascript">
-    
+$.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
+// Added Pusher logging
+Pusher.log = function(msg) {
+console.log(msg);
+};
+
+var pusher = new Pusher(
+'b11c59b91c353835d34a'
+);
+
+var channel = pusher.subscribe('my-channel');
+
+channel.bind('eventoCarga', function(data) {
+carga(data);
+});   
+channel.bind('eventoStop', function(data) {
+detenerse();
+}); 
     //crear variable cronometro, que sera un setInterval de una funcion
     //para poder pararla e iniciarla cuando queramos
     
     var cronometro;
-    function carga(){
+    function carga(data){
       
         contador_d =0;
         contador_s =0;
@@ -39,9 +64,9 @@
         //desde layout, solo habria que visualizarlo 
         //asi por ejemplo
         //<span id="minutos">00</span>:<span id="segundos">00</span>:<span id="decimas">00</span>
-        d = document.getElementById("decimas");
-        s = document.getElementById("segundos");
-        m = document.getElementById("minutos");
+        d = document.getElementById("decimas"+data);
+        s = document.getElementById("segundos"+data);
+        m = document.getElementById("minutos"+data);
  
         cronometro = setInterval(
             function(){
@@ -85,9 +110,6 @@
     function detenerse(){
         clearInterval(cronometro);
     }
-
-    </script>
-    <!-- fin Script de prueba crono hecho por juank-->
   
 </script>
 <!--scripts-->
@@ -117,7 +139,7 @@
     <footer class="page-footer blue darken-4">
       <div class="container">
             <div class="row">
-              <div class="col s3 center">
+              <div class="col s6 center">
                 <!--<i class="large material-icons blue-grey-text text-lighten-3 iconos">person</i>-->
                 <h4 class="blue-grey-text text-lighten-3 ">¿Quiénes Somos?</h4>
                 <p class="blue-grey-text text-lighten-3">
@@ -125,7 +147,7 @@
                   Zubiri Manteo y Don Bosco. 
                 </p>
               </div>
-              <div class="col s3 offset-s6 center ">
+              <div class="col s6 m6 l6 center ">
                 <h4 class="blue-grey-text text-lighten-3">Contáctanos:</h4>
                 <ul class=" blue-grey-text text-lighten-3 contacto" >
                   <h6><li><a class="blue-grey-text text-lighten-3" href="https://twitter.com/SlasportSP"> <i class="icon-twitter"></i>  @SlasportSP </a></li></h6>

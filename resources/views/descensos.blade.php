@@ -15,16 +15,16 @@
             <li><a href="{{ url('/participantes') }}">Participantes</a></li>
             <li><a href="{{ url('/descensos') }}">Descensos</a></li>
             <li><a href="{{ url('/clubes') }}">Inscripción</a></li>
-            <li><a href="{{ url('/inscritos') }}">Participantes Inscritos</a></li>
+            <li><a href="{{ url('/inscritos') }}">Inscritos</a></li>
             @endif
         </ul>
         @if (auth::guest())
         <ul class="right hide-on-med-and-down">
-          <li><a  id="letternav" href="{{ url('/login') }}" class="waves-effect waves-light btn light-blue darken-1">Login</a></li>
+          <li><a  id="letternav" href="{{ url('/login') }}" id="letternav" class="waves-effect waves-light btn light-blue darken-1">Login</a></li>
         </ul>
         @else
         <ul class="right hide-on-med-and-down">
-          <li><a  id="letternav" href="{{ url('/logout') }}" class="waves-effect waves-light btn light-blue darken-1">Log out</a></li>
+          <li><a  id="letternav" href="{{ url('/logout') }}" id="letternav" class="waves-effect waves-light btn light-blue darken-1">Log out</a></li>
         </ul>
         @endif
         @if (auth::guest())
@@ -33,7 +33,7 @@
           <li><a href="{{ url('/participantes') }}">Participantes</a></li>
           <li><a href="{{ url('/descensos') }}">Descensos</a></li>
           <li class="divider"></li>
-          <li><a  href="{{ url('/login') }}" class="waves-effect waves-blue blue-text text-darken-4 ">Login</a></li>
+          <li><a  href="{{ url('/login') }}" i class="waves-effect waves-blue blue-text text-darken-4 ">Login</a></li>
         </ul>
         @else
         
@@ -41,10 +41,10 @@
           <li><a href="{{ url('/') }}">Inicio</a></li>
           <li><a href="{{ url('/participantes') }}">Participantes</a></li>
           <li><a href="{{ url('/descensos') }}">Descensos</a></li>
-          <li><a href="{{ url('/clubes') }}!">Inscripción</a></li>
-          <li><a href="#!">Participantes Inscritos</a></li>
+          <li><a href="{{ url('/clubes') }}">Inscripción</a></li>
+          <li><a href="{{ url('/inscritos') }}">Inscritos</a></li>
           <li class="divider"></li>
-          <li><a href="{{ url('/logout') }}" class="waves-effect waves-light blue-text text-darken-4 ">Log out</a></li>
+          <li><a href="{{ url('/logout') }}"  class="waves-effect waves-light blue-text text-darken-4 ">Log out</a></li>
         </ul>
         @endif
     </div>
@@ -88,12 +88,16 @@
             </li>
             @foreach ($descensos as $d)
             <li class="collection-item avatar">
-                <img  src="{{$d->avatar}}" alt="" class="circle materialboxed">
+                <img  src="{{$d->avatar_piraguista}}" alt="" class="circle materialboxed">
                 <table class="centered">
                  <tbody>
                   <tr>
                     <td class="edit" contenteditable="false">{{$d->nombre}} {{$d->apellido}} {{$d->apellido2}}</td>
-                    <td>{{$d->tiempo}}</td>
+                    <td>
+                        
+                        <span id="minutos{{$d->id_piraguista}}">00</span>:<span id="segundos{{$d->id_piraguista}}">00</span>:<span id="decimas{{$d->id_piraguista}}">00</span>
+                        
+                    </td>
                     <td>+<span class="edit" contenteditable="false">00</span>:<span class="edit" contenteditable="false">00</span></td>
                   </tr>
                 </tbody>
