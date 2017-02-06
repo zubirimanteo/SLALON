@@ -12,6 +12,8 @@
 <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
 <link rel="stylesheet" href="/css/mystyle.css">
 <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
+<link href="/css/style.css" rel="stylesheet" type="text/css">
 
 </head>
 <body class="blue-grey lighten-5">
@@ -22,8 +24,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 <script type="text/javascript" src="/js/animation.js"></script>
 <script type="text/javascript" src="/js/animation-1.js"></script>
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <script src="//js.pusher.com/3.0/pusher.min.js"></script>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 <!--Script prueba crono hecho por juank-->
@@ -33,18 +33,14 @@ $.ajaxSetup({
       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
     }
 });
-
 // Added Pusher logging
 Pusher.log = function(msg) {
 console.log(msg);
 };
-
 var pusher = new Pusher(
 'b11c59b91c353835d34a'
 );
-
 var channel = pusher.subscribe('my-channel');
-
 channel.bind('eventoCarga', function(data) {
 carga(data);
 });   
@@ -100,11 +96,9 @@ detenerse();
                 else if (contador_d < 100){
                   d.innerHTML = contador_d;
                 }
-
                 contador_d++;
             }
         ,10);
-
     }
     
     function detenerse(){
@@ -139,7 +133,7 @@ detenerse();
     <footer class="page-footer blue darken-4">
       <div class="container">
             <div class="row">
-              <div class="col s6 center">
+              <div class="col s12 m6 l4 center">
                 <!--<i class="large material-icons blue-grey-text text-lighten-3 iconos">person</i>-->
                 <h4 class="blue-grey-text text-lighten-3 ">¿Quiénes Somos?</h4>
                 <p class="blue-grey-text text-lighten-3">
@@ -147,17 +141,19 @@ detenerse();
                   Zubiri Manteo y Don Bosco. 
                 </p>
               </div>
-              <div class="col s6 m6 l6 center ">
-                <h4 class="blue-grey-text text-lighten-3">Contáctanos:</h4>
-                <ul class=" blue-grey-text text-lighten-3 contacto" >
-                  <h6><li><a class="blue-grey-text text-lighten-3" href="https://twitter.com/SlasportSP"> <i class="icon-twitter"></i>  @SlasportSP </a></li></h6>
-                  <h6><li><a class="blue-grey-text text-lighten-3" href="#!"><i class="icon-facebook"></i> Slasport</a></li></h6>
-                  <h6><li><a class="blue-grey-text text-lighten-3" href="#!"><i class="material-icons">phone</i> 666-666-666</a></li></h6>
-                </ul>
-
+              <div class="caja-redes col s12 m6 l4 center">
+                <h4 class="blue-grey-text text-lighten-3">Encuentranos</h4>
+               <a href="#" class="icon-button twitter"><i class="icon-twitter"></i><span></span></a>
+               <a href="#" class="icon-button facebook"><i class="icon-facebook"></i><span></span></a>
+               <a href="#" class="icon-button google-plus"><i class="icon-google-plus"></i><span></span></a>
+              </div>
+              <div class="col s12 m6 l4 center">
+                  <h4 class="blue-grey-text text-lighten-3 ">Contactanos</h4>
+                  <p class="blue-grey-text text-lighten-3">
+                  </p>
               </div>
             </div>
-          </div>
+    </div>
       <div class="footer-copyright">
         <div class="container center">
           © 2016 - 2017 Slasport

@@ -59,6 +59,8 @@ class GetAllPiraguistas extends Controller
         $equipo=substr ( $email , 0 ,$pos);
         
         $inscritos = DB::table('piraguistas')
+        ->join('descensos', 'descensos.id_piraguista', '=', 'piraguistas.id_piraguista')
+        ->join('carreras', 'descensos.id_carrera', '=', 'carreras.id_carrera')
         ->where('piraguistas.club', '=', $equipo)
         ->get();
         

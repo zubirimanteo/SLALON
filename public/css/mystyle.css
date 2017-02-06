@@ -184,14 +184,7 @@ h4{
 footer.page-footer .footer-copyright{
     background-color: rgba(54,54,54,.3);
 }
-.icon-twitter:before {
-    content: "\f099";
-    font-size: 24px;
-}
-.icon-facebook:before {
-    content: "\f09a";
-    font-size: 24px;
-}
+
 #letternav{
     font-family: 'Permanent Marker';
 }
@@ -204,4 +197,21 @@ footer.page-footer .footer-copyright{
     webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
     -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
     box-shadow:0 0px 4px #777, 0 0 20px #CCC inset; 
+}
+.card{
+    height: 300px;
+}
+.card-image{
+    height: 300px;
+}
+.card .card-image img {
+    display: block;
+    border-radius: 2px 2px 0 0;
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
 }

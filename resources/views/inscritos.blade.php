@@ -47,6 +47,8 @@
                       <th data-field="nombre">Apellidos</th>
                       <th data-field="club">Club</th>
                       <th data-field="nacionalidad">Nacionalidad</th>
+                      <th data-field="carrera">Carrera</th>
+                      <th data-field="categoria">Categoria</th>
                   </tr>
                 </tbody>
             </table>
@@ -64,6 +66,8 @@
                 <td>{{$i->apellido}} {{$i->apellido2}}</td>
                 <td>{{$i->club}}</td>
                 <td>{{$i->nacionalidad}}</td>
+                <td>{{$i->lugar}}</td>
+                <td>{{$i->categoria}}</td>
               </tr>
             </tbody>
           </table>

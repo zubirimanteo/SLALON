@@ -36,6 +36,9 @@
         channel.bind('getConsulta', function(data) {
             alert(data);
         });
+        channel.bind('evento', function(data) {
+            alert(data);
+        });
     </script>
 </head>
 <body>

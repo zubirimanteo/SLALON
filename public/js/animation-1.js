@@ -1,6 +1,8 @@
 
 $(document).ready(function(){
     //tabla editable y exportar datos en json
+    
+        
     var $TABLE = $('#table');
      
     $('#editar-btn').click(function() {

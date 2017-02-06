@@ -65,8 +65,8 @@
             <tbody>
               <tr> 
                   <th data-field="" hidden >id_piraguista</th>
-                  <th data-field="">Nombre</th>
-                  <th data-field="nombre">Apellidos</th>
+                  <th data-field="nombre">Nombre</th>
+                  <th data-field="apellidos">Apellidos</th>
                   <th data-field="club">Club</th>
                   <th data-field="nacionalidad">Nacionalidad</th>
               </tr>

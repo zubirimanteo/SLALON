@@ -24,8 +24,8 @@ class CreateTableTablanm extends Migration
             $table->foreign('id_descenso')
                   ->references('id_descenso')->on('descensos')
                   ->onDelete('cascade'); 
-            $table->boolean('dato_paso');
-            $table->boolean('dato_vibracion');
+            $table->string('dato_paso')->nullable;
+            $table->string('dato_vibracion')->nullable;
             $table->timestamps();
             
         });

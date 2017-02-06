@@ -1,11 +1,10 @@
 
 $( document ).ready(function(){
-    $('.parallax').parallax();
+  $('.parallax').parallax();
     $(".button-collapse").sideNav();//haburguer menu
     $('.modal').modal();
     $('.materialboxed').materialbox();
     $(".dropdown-button").dropdown();
-        
 });
 
 

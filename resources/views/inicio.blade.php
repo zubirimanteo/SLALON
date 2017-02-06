@@ -2,6 +2,7 @@
 
 @section('navbar')
 <!--NAVBAR-->
+
 <nav>
     <div class="nav-wrapper light-blue darken-3">
         <a href="#" id="menuH2" data-activates="mobile-demo" class=" fixed-action btn-floating menu button-collapse right btn-flat"><i class="material-icons" id="iconMenu">menu</i></a>
@@ -80,7 +81,7 @@
   @foreach ($carreras as $carrera)
         <div class="col s12 m6 l4">
           <div class="card">
-            <div class="card-image">
+            <div class="card-image ">
               <a href="{{ url('/descensos')}}?id_carrera={{$carrera->id_carrera}}"><img src="{{$carrera->avatar_carrera}}"></a>
               <span class="card-title"><a href="{{ url('/descensos')}}?id_carrera={{$carrera->id_carrera}}" id="nomCamp" class="card-action orange-text text-darken-4" >{{$carrera->lugar}}</a></span>
             </div>
