@@ -8,8 +8,8 @@
         <ul id="letternav" class=" left hide-on-med-and-down">
              @if (auth::guest())
             <li><a href="{{ url('/') }}">Inicio</a></li>
-            <li><a href="{{ url('/participantes') }}/{{{ $id or '' }}}">Participantes</a></li>
-            <li><a href="{{ url('/descensos') }}/{{{ $id or '' }}}">Descensos</a></li>
+            <li><a href="{{ url('/participantes') }}{{{ isset($id) ? $id : '' }}}">Participantes</a></li>
+            <li><a href="{{ url('/descensos') }}{{{ isset($id) ? $id : '' }}}">Descensos</a></li>
             @else
             <li><a href="{{ url('/') }}">Inicio</a></li>
             <li><a href="{{ url('/participantes') }}">Participantes</a></li>
