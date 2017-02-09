@@ -8,11 +8,11 @@ use DB;
 class GetAllDescensos extends Controller
 {
 
-    public function getDescensos(){
+    public function getDescensos($id){
         
-        if ($_GET != null){
+        if (isset($id)) {
         
-            $id = $_GET["id_carrera"];
+            //  $id = $_GET["id_carrera"];
             
             $descensos = DB::table('descensos')
             ->join('piraguistas', 'descensos.id_piraguista', '=', 'piraguistas.id_piraguista')
@@ -54,3 +54,5 @@ class GetAllDescensos extends Controller
     }
         
 }
+
+?>

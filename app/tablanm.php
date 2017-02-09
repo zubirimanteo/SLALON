@@ -14,4 +14,10 @@ class tablanm extends Model
     {
         return $this->belongsTo('balizas');
     }
+    
+    protected $fillable = [
+        'id_descenso', 'id_baliza', 'dato_paso', 'dato_vibracion'
+    ];
+    
+    protected $primaryKey = 'id_nm';
 }

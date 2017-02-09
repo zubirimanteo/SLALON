@@ -66,3 +66,4 @@
 [18-Jan-2017 12:29:53 UTC] PHP Fatal error:  require(): Failed opening required '/home/ubuntu/workspace/bootstrap/../vendor/autoload.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/bootstrap/autoload.php on line 17
 [18-Jan-2017 12:30:52 UTC] PHP Warning:  require(/home/ubuntu/workspace/bootstrap/../vendor/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/bootstrap/autoload.php on line 17
 [18-Jan-2017 12:30:52 UTC] PHP Fatal error:  require(): Failed opening required '/home/ubuntu/workspace/bootstrap/../vendor/autoload.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/bootstrap/autoload.php on line 17
+[07-Feb-2017 12:32:57 UTC] PHP Fatal error:  Cannot declare class App\Http\Controllers\RecibirDatos, because the name is already in use in /home/ubuntu/workspace/app/Http/Controllers/RecibirDatosVibracionController.php on line 0

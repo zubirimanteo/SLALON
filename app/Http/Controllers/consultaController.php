@@ -12,7 +12,8 @@ class consultaController extends Controller
 {
     public function recibir(Request $request)
     {
-        
+        //recibe los datos de esta url
+        //https://proyect76-igoreslein.c9users.io/consultaController?id=1
         $all = $request->all();
         $id = $all['id'];
         
@@ -21,7 +22,7 @@ class consultaController extends Controller
         $texto = 'recibo el dato';
         $pusher->trigger('my-channel', 'getConsulta', $texto); 
         
-        $remonte =DB::table('balizas')
+        $remonte = DB::table('balizas')
         ->where('balizas.id_baliza', '=', $id)
         ->get();
         

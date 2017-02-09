@@ -82,14 +82,13 @@
         <div class="col s12 m6 l4">
           <div class="card">
             <div class="card-image ">
-              <a href="{{ url('/descensos')}}?id_carrera={{$carrera->id_carrera}}"><img src="{{$carrera->avatar_carrera}}"></a>
-              <span class="card-title"><a href="{{ url('/descensos')}}?id_carrera={{$carrera->id_carrera}}" id="nomCamp" class="card-action orange-text text-darken-4" >{{$carrera->lugar}}</a></span>
+              <a href="{{ url('/descensos')}}/{{$carrera->id_carrera}}"><img src="{{$carrera->avatar_carrera}}"></a>
+              <span class="card-title"><a href="{{ url('/descensos')}}/{{$carrera->id_carrera}}" id="nomCamp" class="card-action orange-text text-darken-4" >{{$carrera->lugar}}</a></span>
             </div>
           </div>
         </div>
   @endforeach
   </div> 
 </div>
-
 @stop
 

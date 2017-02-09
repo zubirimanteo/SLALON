@@ -10,15 +10,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
-class RecibirDatos extends Controller
+class RecibirVibraciones extends Controller
 {
     public function recibir(Request $request)
     {
         //recibe los datos de esta url
-        //https://proyect76-igoreslein.c9users.io/recibirDatosController?id=1&sensorPaso=v1
+        //https://proyect76-igoreslein.c9users.io/vibracionesController?id=1&sensorVibracion=v1
         $all = $request->all();
         $id = $all['id']; //el id de la baliza
-        $sensor = $all['sensorPaso']; //dato que nos mandara el sensor de paso
+        $sensor = $all['sensorVibracion']; //dato que nos mandara el sensor de paso
         $nd = 0; //numero_descendiente
         //make pusher great again(manda mensajes)
         $pusher = App::make('pusher');
@@ -38,13 +38,13 @@ class RecibirDatos extends Controller
                 }
             }while($tiempo != '00:00:00');
             
-            $pusher->trigger('my-channel', 'eventoCarga', $nd);
+            $pusher->trigger('my-channel', 'evento', $nd);
             
             $evento = tablanm::create([
                 'id_baliza' => $id,
                 'id_descenso' => $id_descenso,
-                'dato_paso' => $sensor,
-                'dato_vibracion' => 0,
+                'dato_paso' => 0,
+                'dato_vibracion' => $sensor,
             ]);
             
         }//if($id == 1)
@@ -58,19 +58,15 @@ class RecibirDatos extends Controller
             foreach($lastRegistro as $lastRegistro){
                 $id_lastDescenso = $lastRegistro->id_descenso;
             }
-            $lastDescenso = DB::table('descensos')
-            ->where('id_descenso', '=', $id_lastDescenso)
-            ->get();
-            
             $evento = tablanm::create([
                 'id_baliza' => $id,
                 'id_descenso' => $id_lastDescenso,
-                'dato_paso' => $sensor,
-                'dato_vibracion' => 0,
+                'dato_paso' => 0,
+                'dato_vibracion' => $sensor,
             ]);
             
             if($id != 5){
-                $pusher->trigger('my-channel', 'eventoStop', $lastDescenso->numero_descendiente);
+                $pusher->trigger('my-channel', 'evento', 'continuara');
             }
             else{
                 $pusher->trigger('my-channel', 'evento', 'deberia parar');

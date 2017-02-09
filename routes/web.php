@@ -20,12 +20,12 @@ use Illuminate\Support\Facades\App;
     Route::get('/', 'GetAllCarreras@getCarreras');
     
     //ruta para coger piraguistas
-    Route::get('/participantes', 'GetAllPiraguistas@getPiraguistas');
-    Route::get('/participantesrt', 'GetAllPiraguistas@lastPiraguistas');
+    Route::get('/participantes/{id}', 'GetAllPiraguistas@getPiraguistas');
+    Route::get('/participantes', 'GetAllPiraguistas@lastPiraguistas');
     
     //ruta para coger descensos
-    Route::get('/descensos', 'GetAllDescensos@getDescensos');
-    Route::get('/descensosrt', 'GetAllDescensos@lastDescensos');
+    Route::get('/descensos/{id}', 'GetAllDescensos@getDescensos');
+    Route::get('/descensos', 'GetAllDescensos@lastDescensos');
 //rutas de autentificacion
 
     //todas las rutas de autentificacion
@@ -51,7 +51,10 @@ use Illuminate\Support\Facades\App;
 
     //ruta funzionau berko zun recibirDatos?datuak=igor bezela baino recibirDatosController jarri ber da
     Route::get('/recibirDatos{datuak}', 'RecibirDatos@recibir');
-    //rutas de pusher real time
+    Route::get('/vibraciones{datuak}', 'RecibirVibraciones@recibir');
+    //ruta para que las balizas consulten a la base de datos y devualvan la respuesta (remonte)
+    Route::get('/consulta{datuak}', 'consultaController@recibir');
+    //rutas de pusher real time //// para ver que los mensajes si se transmiten
     Route::get('/notifications', 'NotificationController@getIndex');
     Route::post('/notifications', 'NotificationController@postNotify');
 
@@ -66,21 +69,7 @@ use Illuminate\Support\Facades\App;
     Route::post('/crear/carrera', 'CarrerasController@createCarrera')->name('create.carrera');
 
 
-    //ruta para hacer la consulta y mandar remonte
-    Route::get('/consulta{datuak}', 'consultaController@recibir');
-
-
-
-
-
-
-
-
-
-
-
-
-
+   
 
 
 ?>

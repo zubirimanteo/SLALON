@@ -25,7 +25,7 @@ class CreateTableDescensos extends Migration
                   ->references('id_piraguista')->on('piraguistas')
                   ->onDelete('cascade');
             $table->time('tiempo');
-            $table->integer('numero_descendiente');
+            $table->integer('numero_descendiente')->unique;
             $table->timestamps();
             
         });

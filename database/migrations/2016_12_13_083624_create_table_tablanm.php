@@ -13,7 +13,7 @@ class CreateTableTablanm extends Migration
      */
     public function up()
     {
-        Schema::create('tablanm', function (Blueprint $table) {
+        Schema::create('tablanms', function (Blueprint $table) {
         
             $table->increments('id_nm')->unsigned();
             $table->integer('id_baliza')->unsigned();

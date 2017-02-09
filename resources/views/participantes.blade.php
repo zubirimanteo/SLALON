@@ -10,8 +10,8 @@
         <ul id="letternav" class="left hide-on-med-and-down">
              @if (auth::guest())
             <li><a href="{{ url('/') }}">Inicio</a></li>
-            <li><a href="{{ url('/participantes') }}">Participantes</a></li>
-            <li><a href="{{ url('/descensos') }}">Descensos</a></li>
+            <li><a href="{{ url('/participantes') }}/{{{ $id or '' }}}">Participantes</a></li>
+            <li><a href="{{ url('/descensos') }}/{{{ $id or '' }}}">Descensos</a></li>
             @else
             <li><a href="{{ url('/') }}">Inicio</a></li>
             <li><a href="{{ url('/participantes') }}">Participantes</a></li>
@@ -81,6 +81,7 @@
          <tbody>
           <tr>
             <td hidden>{{$user->id_piraguista}}</td>
+            
             <td>{{$user->nombre}}</td>
             <td>{{$user->apellido}} {{$user->apellido2}}</td>
             <td>{{$user->club}}</td>

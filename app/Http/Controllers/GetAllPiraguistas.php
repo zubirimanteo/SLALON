@@ -10,11 +10,11 @@ use DB;
 class GetAllPiraguistas extends Controller
 {
     //
-    public function getPiraguistas(){
+    public function getPiraguistas($id){
+
+        if (isset($id)) {
         
-        if($_GET != null){
-        
-        $id = $_GET["id_carrera"];
+        // $id = $_GET["id_carrera"];
         
         $users = DB::table('piraguistas')
         ->join('descensos', 'descensos.id_piraguista', '=', 'piraguistas.id_piraguista')
@@ -32,7 +32,7 @@ class GetAllPiraguistas extends Controller
     }
     
     public function lastPiraguistas(){
-         //fecha lortzeko
+        //fecha lortzeko
         $fecha_actual= getdate();
         $y = $fecha_actual['year'];
         $m = $fecha_actual['mon'];

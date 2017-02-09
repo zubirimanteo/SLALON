@@ -143,7 +143,7 @@ detenerse();
               </div>
               <div class="caja-redes col s12 m6 l4 center">
                 <h4 class="blue-grey-text text-lighten-3">Encuentranos</h4>
-               <a href="#" class="icon-button twitter"><i class="icon-twitter"></i><span></span></a>
+               <a href="https://twitter.com/SlasportSP" class="icon-button twitter"><i class="icon-twitter"></i><span></span></a>
                <a href="#" class="icon-button facebook"><i class="icon-facebook"></i><span></span></a>
                <a href="#" class="icon-button google-plus"><i class="icon-google-plus"></i><span></span></a>
               </div>

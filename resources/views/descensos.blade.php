@@ -8,8 +8,8 @@
         <ul id="letternav" class=" left hide-on-med-and-down">
              @if (auth::guest())
             <li><a href="{{ url('/') }}">Inicio</a></li>
-            <li><a href="{{ url('/participantes') }}">Participantes</a></li>
-            <li><a href="{{ url('/descensos') }}">Descensos</a></li>
+            <li><a href="{{ url('/participantes') }}/{{{ $id or '' }}}">Participantes</a></li>
+            <li><a href="{{ url('/descensos') }}/{{{ $id or '' }}}">Descensos</a></li>
             @else
             <li><a href="{{ url('/') }}">Inicio</a></li>
             <li><a href="{{ url('/participantes') }}">Participantes</a></li>
@@ -95,7 +95,7 @@
                     <td class="edit" contenteditable="false">{{$d->nombre}} {{$d->apellido}} {{$d->apellido2}}</td>
                     <td>
                         
-                        <span id="minutos{{$d->id_piraguista}}">00</span>:<span id="segundos{{$d->id_piraguista}}">00</span>:<span id="decimas{{$d->id_piraguista}}">00</span>
+                        <span id="minutos{{$d->numero_descendiente}}">00</span>:<span id="segundos{{$d->numero_descendiente}}">00</span>:<span id="decimas{{$d->numero_descendiente}}">00</span>
                         
                     </td>
                     <td>+<span class="edit" contenteditable="false">00</span>:<span class="edit" contenteditable="false">00</span></td>
