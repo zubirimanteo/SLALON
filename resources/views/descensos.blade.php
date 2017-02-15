@@ -147,9 +147,7 @@
             </li>
         </ul>
     </div><!--editable-->
-     @if (auth::user()->admin==1)
-        <button id="editar-btn" class="btn blue">Editar <i class="material-icons">mode_edit</i></button>
-     @endif
+     
    
 </div>
 

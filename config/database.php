@@ -25,10 +25,10 @@ return [
     | you may use many connections at once using the Database library.
     |
     */
-
+    //COMENTAU BAT EDO BESTEAHERO
     'default' => env(
-                     'DB_CONNECTION'
-                    //  'MYSQL_DB_CONNECTION'
+                    //  'DB_CONNECTION'
+                     'MYSQL_DB_CONNECTION'
                      ),
 
     /*

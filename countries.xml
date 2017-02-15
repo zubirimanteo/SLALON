@@ -3,15 +3,11 @@
   <country code='af' handle='afghanistan' continent='asia' iso='4'>Afghanistan</country>
   <country code='al' handle='albania' continent='europe' iso='8'>Albania</country>
   <country code='dz' handle='algeria' continent='africa' iso='12'>Algeria</country>
-  <country code='as' handle='american-samoa' continent='polynesia' iso='16'>American Samoa</country>
   <country code='ad' handle='andorra' continent='europe' iso='20'>Andorra</country>
   <country code='ao' handle='angola' continent='africa' iso='24'>Angola</country>
-  <country code='ai' handle='anguilla' continent='north america' iso='660'>Anguilla</country>
-  <country code='aq' handle='antarctica' continent='antarctica' iso='10'>Antarctica</country>
   <country code='ag' handle='antigua-and-barbuda' continent='north america' iso='28'>Antigua And Barbuda</country>
   <country code='ar' handle='argentina' continent='south america' iso='32'>Argentina</country>
   <country code='am' handle='armenia' continent='europe' iso='51'>Armenia</country>
-  <country code='aw' handle='aruba' continent='north america' iso='533'>Aruba</country>
   <country code='au' handle='australia' continent='australasia' iso='36'>Australia</country>
   <country code='at' handle='austria' continent='europe' iso='40'>Austria</country>
   <country code='az' handle='azerbaijan' continent='europe' iso='31'>Azerbaijan</country>
@@ -23,14 +19,11 @@
   <country code='be' handle='belgium' continent='europe' iso='56'>Belgium</country>
   <country code='bz' handle='belize' continent='central america' iso='84'>Belize</country>
   <country code='bj' handle='benin' continent='africa' iso='204'>Benin</country>
-  <country code='bm' handle='bermuda' continent='north america' iso='60'>Bermuda</country>
   <country code='bt' handle='bhutan' continent='asia' iso='64'>Bhutan</country>
   <country code='bo' handle='bolivia' continent='south america' iso='68'>Bolivia</country>
   <country code='ba' handle='bosnia-and-herzegovina' continent='europe' iso='70'>Bosnia And Herzegovina</country>
   <country code='bw' handle='botswana' continent='africa' iso='72'>Botswana</country>
-  <country code='bv' handle='bouvet-island' continent='antarctica' iso='74'>Bouvet Island</country>
   <country code='br' handle='brazil' continent='south america' iso='76'>Brazil</country>
-  <country code='io' handle='british-indian-ocean-continent' continent='asia' iso='86'>British Indian Ocean continent</country>
   <country code='bn' handle='brunei-darussalam' continent='asia' iso='96'>Brunei Darussalam</country>
   <country code='bg' handle='bulgaria' continent='europe' iso='100'>Bulgaria</country>
   <country code='bf' handle='burkina-faso' continent='africa' iso='854'>Burkina Faso</country>
@@ -39,13 +32,9 @@
   <country code='cm' handle='cameroon' continent='africa' iso='120'>Cameroon</country>
   <country code='ca' handle='canada' continent='north america' iso='124'>Canada</country>
   <country code='cv' handle='cape-verde' continent='africa' iso='132'>Cape Verde</country>
-  <country code='ky' handle='cayman-islands' continent='north america' iso='136'>Cayman Islands</country>
   <country code='cf' handle='central-african-republic' continent='africa' iso='140'>Central African Republic</country>
   <country code='td' handle='chad' continent='africa' iso='148'>Chad</country>
   <country code='cl' handle='chile' continent='south america' iso='152'>Chile</country>
-  <country code='cn' handle='china' continent='asia' iso='156'>China</country>
-  <country code='cx' handle='christmas-island' continent='australasia' iso='162'>Christmas Island</country>
-  <country code='cc' handle='cocos-islands' continent='australasia' iso='166'>Cocos (Keeling) Islands</country>
   <country code='co' handle='colombia' continent='south america' iso='170'>Colombia</country>
   <country code='km' handle='comoros' continent='africa' iso='174'>Comoros</country>
   <country code='cg' handle='congo' continent='africa' iso='178'>Congo</country>
