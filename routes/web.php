@@ -26,6 +26,7 @@ use Illuminate\Support\Facades\App;
     //ruta para coger descensos
     Route::get('/descensos/{id}', 'GetAllDescensos@getDescensos');
     Route::get('/descensos', 'GetAllDescensos@lastDescensos');
+    
 //rutas de autentificacion
 
     //todas las rutas de autentificacion
@@ -69,8 +70,5 @@ use Illuminate\Support\Facades\App;
     Route::post('/notifications', 'NotificationController@postNotify');
 
 //RUTAS DE PRUEBA
-
-    
-
 
 ?>
