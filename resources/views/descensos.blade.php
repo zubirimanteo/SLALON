@@ -8,12 +8,34 @@
         <ul id="letternav" class=" left hide-on-med-and-down">
              @if (auth::guest())
             <li><a href="{{ url('/') }}">Inicio</a></li>
-            <li><a href="{{ url('/participantes') }}{{{ isset($id) ? $id : '' }}}">Participantes</a></li>
-            <li><a href="{{ url('/descensos') }}{{{ isset($id) ? $id : '' }}}">Descensos</a></li>
+                @if(isset($id))
+                    <li><a href="{{ url('/participantes') }}/{{$id}}">Participantes</a></li>
+                    <li><a href="{{ url('/descensos') }}/{{$id}}">Descensos</a></li>
+                @else
+                    <li><a href="{{ url('/participantes') }}">Participantes</a></li>
+                    <li><a href="{{ url('/descensos') }}">Descensos</a></li>
+                @endif
+            @elseif (Auth::user()->admin==1)
+            <li><a href="{{ url('/') }}">Inicio</a></li>
+                @if(isset($id))
+                    <li><a href="{{ url('/participantes') }}/{{$id}}">Participantes</a></li>
+                    <li><a href="{{ url('/descensos') }}/{{$id}}">Descensos</a></li>
+                @else
+                    <li><a href="{{ url('/participantes') }}">Participantes</a></li>
+                    <li><a href="{{ url('/descensos') }}">Descensos</a></li>
+                @endif
+            <li><a href="{{ url('/clubes') }}">Inscripción</a></li>
+            <li><a href="{{ url('/inscritos') }}">Inscritos</a></li>
+            <li><a href="{{ url('/carreras') }}">Carreras</a></li>
             @else
             <li><a href="{{ url('/') }}">Inicio</a></li>
-            <li><a href="{{ url('/participantes') }}">Participantes</a></li>
-            <li><a href="{{ url('/descensos') }}">Descensos</a></li>
+                @if(isset($id))
+                    <li><a href="{{ url('/participantes') }}/{{$id}}">Participantes</a></li>
+                    <li><a href="{{ url('/descensos') }}/{{$id}}">Descensos</a></li>
+                @else
+                    <li><a href="{{ url('/participantes') }}">Participantes</a></li>
+                    <li><a href="{{ url('/descensos') }}">Descensos</a></li>
+                @endif
             <li><a href="{{ url('/clubes') }}">Inscripción</a></li>
             <li><a href="{{ url('/inscritos') }}">Inscritos</a></li>
             @endif
@@ -22,6 +44,7 @@
         <ul class="right hide-on-med-and-down">
           <li><a  id="letternav" href="{{ url('/login') }}" id="letternav" class="waves-effect waves-light btn light-blue darken-1">Login</a></li>
         </ul>
+        
         @else
         <ul class="right hide-on-med-and-down">
           <li><a  id="letternav" href="{{ url('/logout') }}" id="letternav" class="waves-effect waves-light btn light-blue darken-1">Log out</a></li>
@@ -60,13 +83,19 @@
                     <tbody>
                       <tr>  
                             @if (auth::guest())
-                            <td data-field="id"><strong>Nombre y Apellidos</strong></td>
-                            <td data-field="number"><strong>Tiempo</strong></td>
-                            <td data-field="number"><strong>Penalización</strong></td>
+                            <th><b>Nombre</b></th>
+                            <th><b>Apellidos</b></th>
+                            <th><b>Tiempo</b></th>
+                            <th><b>Penalización</b></th>
+                            <th><b>Tiempo Final</b></th>
+                            <th><b>Descendiendo</b></th>
                             @else
-                            <td data-field="id"><strong>Nombre y Apellidos</strong></td>
-                            <td data-field="number"><strong>Tiempo</strong></td>
-                            <td data-field="number"><strong>Penalización</strong></td>
+                            <th><b>Nombre</b></th>
+                            <th><b>Apellidos</b></th>
+                            <th><b>Tiempo</b></th>
+                            <th><b>Penalización</b></th>
+                            <th><b>Tiempo Final</b></th>
+                            <th><b>Descendiendo</b></th>
                             @endif
                       </tr>
                     </tbody>
@@ -91,14 +120,21 @@
                 <img  src="{{$d->avatar_piraguista}}" alt="" class="circle materialboxed">
                 <table class="centered">
                  <tbody>
-                  <tr>
-                    <td class="edit" contenteditable="false">{{$d->nombre}} {{$d->apellido}} {{$d->apellido2}}</td>
-                    <td>
-                        
-                        <span id="minutos{{$d->numero_descendiente}}">00</span>:<span id="segundos{{$d->numero_descendiente}}">00</span>:<span id="decimas{{$d->numero_descendiente}}">00</span>
-                        
+                  <tr id="{{$d->numero_descendiente}}">
+                    <td class="edit" contenteditable="false">{{$d->nombre}}</td> 
+                    <td class="edit" contenteditable="false">{{$d->apellido}} {{$d->apellido2}}</td>
+                    <td id="tiempo" class="edit">{{$d->tiempo}}</td>
+                    <td id="penalizacion" class="edit">+{{$d->penalizacion}}</td>
+                    <td id="tiempoFinal" class="edit">{{$d->tiempoFinal}}</td>
+                    <td id="estado">
+                        @if ($d->estado == 'terminado')
+                        <img src="/storage/descendiendo/finish.png" class="responsive-img"></img>
+                        @elseif ($d->estado == 'parado')
+                        <img src="/storage/descendiendo/stop.png" class="responsive-img"></img>
+                        @elseif ($d->estado == 'descendiendo')
+                        <img src="/storage/descendiendo/ready.png" class="responsive-img"></img>
+                        @endif
                     </td>
-                    <td>+<span class="edit" contenteditable="false">00</span>:<span class="edit" contenteditable="false">00</span></td>
                   </tr>
                 </tbody>
               </table>
@@ -111,10 +147,9 @@
             </li>
         </ul>
     </div><!--editable-->
-     @if (auth::guest())
-     @else
+     @if (auth::user()->admin==1)
         <button id="editar-btn" class="btn blue">Editar <i class="material-icons">mode_edit</i></button>
-    @endif
+     @endif
    
 </div>
 

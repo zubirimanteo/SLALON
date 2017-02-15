@@ -13,6 +13,13 @@
             <li><a href="{{ url('/') }}">Inicio</a></li>
             <li><a href="{{ url('/participantes') }}">Participantes</a></li>
             <li><a href="{{ url('/descensos') }}">Descensos</a></li>
+            @elseif (Auth::user()->admin==1)
+            <li><a href="{{ url('/') }}">Inicio</a></li>
+            <li><a href="{{ url('/participantes') }}">Participantes</a></li>
+            <li><a href="{{ url('/descensos') }}">Descensos</a></li>
+            <li><a href="{{ url('/clubes') }}">Inscripción</a></li>
+            <li><a href="{{ url('/inscritos') }}">Inscritos</a></li>
+            <li><a href="{{ url('/carreras') }}">Carreras</a></li>
             @else
             <li><a href="{{ url('/') }}">Inicio</a></li>
             <li><a href="{{ url('/participantes') }}">Participantes</a></li>
@@ -67,11 +74,13 @@
     <div id="index-banner wellcome"  class="parallax-container">
         <div class="section no-pad-bot">
           <div class="container">
-            <br><br> <br><br>
+            
             <h1 id="nomCampa" class=" header bold center titulo blue-text text-darken-4 ">SlaSport</h1>
           </div>
         </div>
-        <div class="parallax"><img class="imagenCab"  src="/imgs/rio.gif"></div>
+        <div class="parallax">
+          <!--<img class="imagenCab"  src="/imgs/rio.gif"></div>-->
+          <video src="/imgs/Webface.mp4" class="imagenCab responsive-video"  autoplay loop></video>
       </div>
   </div>
   

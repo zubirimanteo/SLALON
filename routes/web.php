@@ -46,6 +46,16 @@ use Illuminate\Support\Facades\App;
     //ruta para inscritos
     Route::get('/inscritos', 'GetAllPiraguistas@inscritos');
     
+//vistas con un usuario admin
+
+    //ruta para la vista del formulario para las carreras
+    Route::get('/carreras', function () {
+        return view('carreras');
+    });
+    
+    //ruta para añadir carreras a la base de datos
+    Route::post('/crear/carrera', 'CarrerasController@createCarrera')->name('create.carrera');
+    
 
 //rutas para real time pusher y relacion con recibir datos de balizas
 
@@ -60,16 +70,7 @@ use Illuminate\Support\Facades\App;
 
 //RUTAS DE PRUEBA
 
-    //ruta para la vista del formulario para las carreras
-    Route::get('/carreras', function () {
-        return view('carreras');
-    });
     
-    //ruta para añadir carreras a la base de datos
-    Route::post('/crear/carrera', 'CarrerasController@createCarrera')->name('create.carrera');
-
-
-   
 
 
 ?>

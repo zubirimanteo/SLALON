@@ -38,10 +38,11 @@
         });
         channel.bind('evento', function(data) {
             alert(data);
+            //document.getElementById('body').innerHTML = data;
         });
     </script>
 </head>
-<body>
+<body id='body'>
 
 <div class="stripe no-padding-bottom numbered-stripe">
     <div class="fixed wrapper">

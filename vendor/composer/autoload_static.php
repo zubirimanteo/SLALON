@@ -295,12 +295,11 @@ class ComposerStaticInitbe3e844cfc9884341ca95d1f1f4b5e44
 
     public static $classMap = array (
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
-        'CreatePiraguistasTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_19_092027_create_piraguistas_table.php',
         'CreateTableBaliza' => __DIR__ . '/../..' . '/database/migrations/2016_12_07_075457_create_table_baliza.php',
         'CreateTableCarrera' => __DIR__ . '/../..' . '/database/migrations/2016_12_07_075957_create_table_carrera.php',
         'CreateTableDescensos' => __DIR__ . '/../..' . '/database/migrations/2016_12_13_083553_create_table_descensos.php',
         'CreateTablePiraguistas' => __DIR__ . '/../..' . '/database/migrations/2016_12_07_075946_create_table_piraguistas.php',
-        'CreateTableTablanm' => __DIR__ . '/../..' . '/database/migrations/2016_12_13_083624_create_table_tablanm.php',
+        'CreateTableTablanms' => __DIR__ . '/../..' . '/database/migrations/2016_12_13_083624_create_table_tablanms.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
@@ -836,6 +835,7 @@ class ComposerStaticInitbe3e844cfc9884341ca95d1f1f4b5e44
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
+        'usersUpdate' => __DIR__ . '/../..' . '/database/seeds/usersUpdate.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

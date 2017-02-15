@@ -19,7 +19,7 @@ class descensos extends Model
         return $this->hasMany('tablanm');
     }
     protected $fillable = [
-        'id_carrera', 'id_piraguista', 'numero_descendiente', 'tiempo'
+        'id_carrera', 'id_piraguista', 'numero_descendiente', 'tiempo', 'penalizacion', 'tiempoFinal', 'estado'
     ];
     protected $primaryKey = 'id_descenso';
 }

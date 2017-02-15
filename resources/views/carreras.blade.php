@@ -8,11 +8,20 @@
         <a href="#!" class="brand-logo center "><img src="/imgs/Logo.png" class="logo"></a>
         
         <ul class="left hide-on-med-and-down">
+            @if (auth::user()->admin==1)
+            <li><a href="{{ url('/') }}">Inicio</a></li>
+            <li><a href="{{ url('/participantes') }}">Participantes</a></li>
+            <li><a href="{{ url('/descensos') }}">Descensos</a></li>
+            <li><a href="{{ url('/clubes') }}">Inscripción</a></li>
+            <li><a href="{{ url('/inscritos') }}">Inscritos</a></li>
+            <li><a href="{{ url('/carreras') }}">Carreras</a></li>
+            @else
             <li><a href="{{ url('/') }}" id="home">Inicio</a></li>
             <li><a href="{{ url('/participantes') }}">Participantes</a></li>
             <li><a href="{{ url('/descensos') }}">Descensos</a></li>
             <li><a href="{{ url('/clubes') }}">Inscripción</a></li>
             <li><a href="{{ url('/inscritos')}}">Inscritos</a></li>
+            @endif
             
         </ul>
         <ul class="right hide-on-med-and-down">

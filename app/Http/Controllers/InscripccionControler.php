@@ -48,6 +48,9 @@ class InscripccionControler extends Controller
             'id_piraguista' => $piraguista->id_piraguista,
             'numero_descendiente' => 0,
             'tiempo' => '00:00:00',
+            'penalizacion' => '00:00:00',
+            'tiempoFinal' => '00:00:00',
+            'estado' => 'parado',
         ]);
         
         $descendiente = DB::table('descensos')

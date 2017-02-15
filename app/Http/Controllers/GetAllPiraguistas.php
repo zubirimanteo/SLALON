@@ -21,8 +21,8 @@ class GetAllPiraguistas extends Controller
         ->join('carreras', 'descensos.id_carrera', '=', 'carreras.id_carrera')
         ->where('carreras.id_carrera', '=', $id)
         ->get();
-        
-        return view('participantes', ['users' => $users]);
+        $this->id = $id;
+        return view('participantes', compact('users','id'));
         }
         
         else{

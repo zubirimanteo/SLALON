@@ -18,6 +18,7 @@ class GetAllDescensos extends Controller
             ->join('piraguistas', 'descensos.id_piraguista', '=', 'piraguistas.id_piraguista')
             ->join('carreras', 'descensos.id_carrera', '=', 'carreras.id_carrera')
             ->where('carreras.id_carrera', '=', $id )
+            ->orderby('tiempoFinal', 'asc')
             ->get();
         
             return view('descensos',compact('descensos','id'));
@@ -47,6 +48,7 @@ class GetAllDescensos extends Controller
         ->join('carreras', 'descensos.id_carrera', '=', 'carreras.id_carrera')
         ->where('carreras.fecha_inicio', '<=', $fecha)
         ->where('carreras.fecha_final', '>=', $fecha)
+        ->orderby('tiempoFinal', 'asc')
         ->get();
         
         return view('descensos', ['descensos'=>$descensos]);

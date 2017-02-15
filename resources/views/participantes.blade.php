@@ -10,14 +10,22 @@
         <ul id="letternav" class="left hide-on-med-and-down">
              @if (auth::guest())
             <li><a href="{{ url('/') }}">Inicio</a></li>
-            <li><a href="{{ url('/participantes') }}{{{ isset($id) ? $id : '' }}}">Participantes</a></li>
-            <li><a href="{{ url('/descensos') }}{{{ isset($id) ? $id : '' }}}">Descensos</a></li>
+               @if(isset($id))
+                    <li><a href="{{ url('/participantes') }}/{{$id}}">Participantes</a></li>
+                    <li><a href="{{ url('/descensos') }}/{{$id}}">Descensos</a></li>
+                @else
+                    <li><a href="{{ url('/participantes') }}">Participantes</a></li>
+                    <li><a href="{{ url('/descensos') }}">Descensos</a></li>
+                @endif
             @else
             <li><a href="{{ url('/') }}">Inicio</a></li>
             <li><a href="{{ url('/participantes') }}">Participantes</a></li>
             <li><a href="{{ url('/descensos') }}">Descensos</a></li>
             <li><a href="{{ url('/clubes') }}">Inscripción</a></li>
             <li><a href="{{ url('/inscritos') }}">Inscritos</a></li>
+                @if (auth::user()->admin==1)
+                <li><a href="{{ url('/carreras') }}">Carreras</a></li>
+                @endif
             @endif
         </ul>
         @if (auth::guest())
@@ -81,7 +89,6 @@
          <tbody>
           <tr>
             <td hidden>{{$user->id_piraguista}}</td>
-            
             <td>{{$user->nombre}}</td>
             <td>{{$user->apellido}} {{$user->apellido2}}</td>
             <td>{{$user->club}}</td>

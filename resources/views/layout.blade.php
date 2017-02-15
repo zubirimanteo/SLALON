@@ -6,6 +6,7 @@
 <meta charset = "utf-8">
 <title>SlaSport</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="csrf-token" content="{{ csrf_token() }}"><!--frogatzeeee-->
 <link rel="icon" type="image/png" href="/imgs/Logo.png" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
@@ -41,70 +42,39 @@ var pusher = new Pusher(
 'b11c59b91c353835d34a'
 );
 var channel = pusher.subscribe('my-channel');
-channel.bind('eventoCarga', function(data) {
-carga(data);
+channel.bind('eventoPaso', function(data) {
+datos=JSON.parse(data);
+$('#'+ datos['idDescenso']+' #tiempo').html(datos["tiempo"]);
+$('#'+ datos['idDescenso']+' #tiempoFinal').html(datos["tiempoFinal"]);
+if(datos["estado"]=="terminado"){
+  $('#'+ datos['idDescenso']+' #estado').html('<img src="/storage/descendiendo/finish.png" class="responsive-img"></img>');
+}
+else if(datos["estado"]=="parado"){
+  $('#'+ datos['idDescenso']+' #estado').html('<img src="/storage/descendiendo/stop.png" class="responsive-img"></img>');
+}
+else if(datos["estado"]=="descendiendo"){
+  $('#'+ datos['idDescenso']+' #estado').html('<img src="/storage/descendiendo/ready.png" class="responsive-img"></img>');
+}
+
 });   
-channel.bind('eventoStop', function(data) {
-detenerse();
-}); 
-    //crear variable cronometro, que sera un setInterval de una funcion
-    //para poder pararla e iniciarla cuando queramos
-    
-    var cronometro;
-    function carga(data){
-      
-        contador_d =0;
-        contador_s =0;
-        contador_m =0;
-        //para implementar los datos en cualquier sitio de los documentos que extiendan
-        //desde layout, solo habria que visualizarlo 
-        //asi por ejemplo
-        //<span id="minutos">00</span>:<span id="segundos">00</span>:<span id="decimas">00</span>
-        d = document.getElementById("decimas"+data);
-        s = document.getElementById("segundos"+data);
-        m = document.getElementById("minutos"+data);
- 
-        cronometro = setInterval(
-            function(){
-                if(contador_d==100){
-                  //si hay 100 decimas crea un segundo
-                  contador_d=0;
-                  contador_s++;
-                
-                  if(contador_s < 10){
-                    s.innerHTML = "0" + contador_s;
-                  }
-                  else{
-                    s.innerHTML = contador_s;
-                  }
-                
-                  if(contador_s==60){
-                      //si hay 60 segundos crea un minuto
-                      contador_s=0;
-                      contador_m++;
-                      m.innerHTML = contador_m;
-                      
-                      if(contador_m==60){
-                          contador_m=0;
-                      }//end if contador_m
-                      
-                  }//end if contador_s
-                }//end if contador_d
-                if(contador_d < 10){
-                  d.innerHTML = "0"+contador_d;
-                }
-                else if (contador_d < 100){
-                  d.innerHTML = contador_d;
-                }
-                contador_d++;
-            }
-        ,10);
-    }
-    
-    function detenerse(){
-        clearInterval(cronometro);
-    }
-  
+channel.bind('eventoVibracion', function(data) {
+datos=JSON.parse(data);
+$('#'+ datos['idDescenso']+' #tiempo').html(datos["tiempo"]);
+$('#'+ datos['idDescenso']+' #penalizacion').html(datos["penalizacion"]);
+$('#'+ datos['idDescenso']+' #tiempoFinal').html(datos["tiempoFinal"]);
+if(datos["estado"]=="terminado"){
+  $('#'+ datos['idDescenso']+' #estado').html('<img src="/storage/descendiendo/finish.png" class="responsive-img"></img>');
+}
+else if(datos["estado"]=="parado"){
+  $('#'+ datos['idDescenso']+' #estado').html('<img src="/storage/descendiendo/stop.png" class="responsive-img"></img>');
+}
+else if(datos["estado"]=="descendiendo"){
+  $('#'+ datos['idDescenso']+' #estado').html('<img src="/storage/descendiendo/ready.png" class="responsive-img"></img>');
+}
+});  
+
+
+
 </script>
 <!--scripts-->
 <!--END OF links a stylesheets y scripts de js...-->
