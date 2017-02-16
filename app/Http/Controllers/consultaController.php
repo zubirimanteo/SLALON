@@ -27,7 +27,9 @@ class consultaController extends Controller
         ->get();
         
         foreach($remonte as $remonte){
-            return $remonte->remonte;
+            $remonte=$remonte->remonte;
+            $remonte=string($remonte);
+            return $remonte;
         } 
         
     

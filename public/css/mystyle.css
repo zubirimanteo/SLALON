@@ -85,6 +85,13 @@
     }
    
 }
+@media only screen and (max-width: 1024px) and  (max-height: 1366px)  {
+    #nomCampa{
+        font-family: 'Permanent Marker', cursive;
+        -webkit-text-stroke: 2.5px black;
+        padding-top: 100px;
+    }
+}
 
 @media only screen and (max-width: 1024px) and (max-height: 768px){
  .imagenCab{
@@ -172,12 +179,18 @@ video{
     -moz-box-shadow: 0 0px 4px #777, 0 0 20px #CCC inset;
     box-shadow: 0 0px 4px #777, 0 0 20px #CCC inset;
 }
+ #titles{
+         display:none;
+    }
 }
 @media only screen and (max-width: 736px)and (max-height:414px){
  .imagenCab{
     height: 500px;
     width: 100% !important;
     margin-bottom:1px;  
+    }
+     #titles{
+         display:none;
     }
 }
 @media only screen and (max-width: 375px)and (max-height:667px){
@@ -192,6 +205,54 @@ video{
     overflow: hidden;
     height: 120px;
     
+    }
+     #titles{
+         display:none;
+    }
+}
+@media only screen and (max-width: 667px)and (max-height:375px){
+    
+    #titles{
+         display:none;
+    }
+    .tablas{
+    width: 97% !important;
+    left: 2% !important;
+    }
+}
+@media only screen and (max-width: 375px)and (max-height:667px){
+    #nomCamp {
+    font-family: 'Permanent Marker', cursive;
+    -webkit-text-stroke: 0.9px black;
+    font-size:3.5em;
+    }
+    .collection .collection-item.avatar {
+    min-height: 84px;
+    padding-left: 0px;
+    position: relative;
+    width: 200%;
+    }
+    .cuerpo{
+    padding:10px;
+    margin:auto;
+    }
+}/*pantalla pequeñña**/
+@media only screen and (max-width: 360px)and (max-height:640px){
+    #nomCamp {
+    font-family: 'Permanent Marker', cursive;
+    -webkit-text-stroke: 0.9px black;
+    font-size:3.5em;
+    }
+    .collection .collection-item.avatar {
+    min-height: 84px;
+    padding-left: 0px;
+    position: relative;
+    width: 100%!important;
+    }
+    .cuerpo{
+    padding:10px !important;
+    margin:auto;
+    border:solid;
     }
 }
 video {
@@ -218,13 +279,7 @@ video {
     font-size: 79px;
     -webkit-text-stroke: 2.5px black;
 }
-@media only screen and (max-width: 1024px) and  (max-height: 1366px)  {
-    #nomCampa{
-        font-family: 'Permanent Marker', cursive;
-        -webkit-text-stroke: 2.5px black;
-        padding-top: 100px;
-    }
-}
+
 #nomCampa{
         font-family: 'Permanent Marker', cursive;
         -webkit-text-stroke: 2.5px black;

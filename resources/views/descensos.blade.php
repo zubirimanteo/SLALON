@@ -77,7 +77,7 @@
 <div class="section cuerpo  ">
     <h1 id="nomCamp" class="header center blue-text text-darken-4">Descensos</h1>
         <ul class="collection tablas">
-            <li class="collection-item avatar">
+            <li class="collection-item avatar" id="titles">
                 <i class="material-icons circle white">perm_identity</i>
                 <table class="right">
                     <tbody>
