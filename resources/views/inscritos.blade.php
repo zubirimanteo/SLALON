@@ -73,7 +73,7 @@
                 <td>{{$i->nombre}}</td>
                 <td>{{$i->apellido}} {{$i->apellido2}}</td>
                 <td>{{$i->club}}</td>
-                <td>{{$i->nacionalidad}}</td>
+                <td><img src="/storage/countries/{{$i->nacionalidad}}.png" style="height:40px; width:60px;"></td>
                 <td>{{$i->lugar}}</td>
                 <td>{{$i->categoria}}</td>
               </tr>

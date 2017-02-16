@@ -27,7 +27,10 @@
 <script type="text/javascript" src="/js/animation-1.js"></script>
 <script src="//js.pusher.com/3.0/pusher.min.js"></script>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-<!--Script prueba crono hecho por juank-->
+
+<!--//scripts en otra paginas-->
+@yield('script')
+
 <script type="text/javascript">
 $.ajaxSetup({
     headers: {
@@ -72,7 +75,6 @@ else if(datos["estado"]=="descendiendo"){
   $('#'+ datos['idDescenso']+' #estado').html('<img src="/storage/descendiendo/ready.png" class="responsive-img"></img>');
 }
 });  
-
 
 
 </script>

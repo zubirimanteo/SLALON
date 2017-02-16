@@ -37,7 +37,6 @@
   <country code='cl' handle='chile' continent='south america' iso='152'>Chile</country>
   <country code='co' handle='colombia' continent='south america' iso='170'>Colombia</country>
   <country code='km' handle='comoros' continent='africa' iso='174'>Comoros</country>
-  <country code='cg' handle='congo' continent='africa' iso='178'>Congo</country>
   <country code='ck' handle='cook-islands' continent='polynesia' iso='184'>Cook Islands</country>
   <country code='cr' handle='costa-rica' continent='central america' iso='188'>Costa Rica</country>
   <country code='ci' handle='cote-divoire' continent='africa' iso='384'>Cote D'Ivoire</country>
@@ -56,34 +55,22 @@
   <country code='er' handle='eritrea' continent='africa' iso='232'>Eritrea</country>
   <country code='ee' handle='estonia' continent='europe' iso='233'>Estonia</country>
   <country code='et' handle='ethiopia' continent='africa' iso='210'>Ethiopia</country>
-  <country code='fk' handle='falkland-islands' continent='south america' iso='238'>Falkland Islands (Malvinas)</country>
-  <country code='fo' handle='faroe-islands' continent='europe' iso='234'>Faroe Islands</country>
   <country code='fj' handle='fiji' continent='melanesia' iso='242'>Fiji</country>
   <country code='fi' handle='finland' continent='europe' iso='246'>Finland</country>
   <country code='fr' handle='france' continent='europe' alt='Francaise' iso='250'>France</country>
-  <country code='fx' handle='france-metropolitan' continent='europe' iso='249'>France, Metropolitan</country>
-  <country code='gf' handle='french-guiana' continent='south america' iso='254'>French Guiana</country>
-  <country code='pf' handle='french-polynesia' continent='polynesia' iso='258'>French Polynesia</country>
-  <country code='tf' handle='french-southern-territories' continent='antarctica' iso='260'>French Southern Territories</country>
   <country code='ga' handle='gabon' continent='africa' iso='266'>Gabon</country>
   <country code='gm' handle='gambia' continent='africa' iso='270'>Gambia</country>
   <country code='ge' handle='georgia' continent='asia' iso='268'>Georgia</country>
   <country code='de' handle='germany' continent='europe' alt='Deutschland' iso='276'>Germany</country>
   <country code='gh' handle='ghana' continent='africa' iso='288'>Ghana</country>
-  <country code='gi' handle='gibraltar' continent='europe' iso='292'>Gibraltar</country>
   <country code='gr' handle='greece' continent='europe' iso='300'>Greece</country>
-  <country code='gl' handle='greenland' continent='north america' iso='304'>Greenland</country>
   <country code='gd' handle='grenada' continent='north america' iso='308'>Grenada</country>
-  <country code='gp' handle='guadeloupe' continent='north america' iso='312'>Guadeloupe</country>
-  <country code='gu' handle='guam' continent='australasia' iso='316'>Guam</country>
   <country code='gt' handle='guatemala' continent='north america' iso='320'>Guatemala</country>
   <country code='gn' handle='guinea' continent='africa' iso='324'>Guinea</country>
   <country code='gw' handle='guinea-bissau' continent='africa' iso='624'>Guinea-Bissau</country>
   <country code='gy' handle='guyana' continent='south america' iso='328'>Guyana</country>
   <country code='ht' handle='haiti' continent='north america' iso='332'>Haiti</country>
-  <country code='hm' handle='heard-island-and-mcdonald-islands' continent='antarctica' iso='334'>Heard Island and Mcdonald Islands</country>
   <country code='hn' handle='honduras' continent='north america' iso='340'>Honduras</country>
-  <country code='hk' handle='hong-kong' continent='asia' iso='344'>Hong Kong</country>
   <country code='hu' handle='hungary' continent='europe' iso='348'>Hungary</country>
   <country code='is' handle='iceland' continent='europe' iso='352'>Iceland</country>
   <country code='in' handle='india' continent='asia' iso='356'>India</country>
@@ -99,11 +86,8 @@
   <country code='kz' handle='kazakhstan' continent='asia' iso='398'>Kazakhstan</country>
   <country code='ke' handle='kenya' continent='africa' iso='404'>Kenya</country>
   <country code='ki' handle='kiribati' continent='australasia' iso='296'>Kiribati</country>
-  <country code='kp' handle='korea-democratic-peoples-republic-of' continent='asia' alt='dprk' iso='408'>Korea, Democratic People'S Republic Of</country>
-  <country code='kr' handle='korea-republic-of' continent='asia' iso='410'>Korea, Republic Of</country>
   <country code='kw' handle='kuwait' continent='asia' iso='414'>Kuwait</country>
   <country code='kg' handle='kyrgyzstan' continent='asia' iso='417'>Kyrgyzstan</country>
-  <country code='la' handle='lao-peoples-democratic-republic' continent='asia' iso='418'>Lao People's Democratic Republic</country>
   <country code='lv' handle='latvia' continent='europe' iso='428'>Latvia</country>
   <country code='lb' handle='lebanon' continent='asia' iso='422'>Lebanon</country>
   <country code='ls' handle='lesotho' continent='africa' iso='426'>Lesotho</country>
@@ -112,7 +96,6 @@
   <country code='li' handle='liechtenstein' continent='europe' iso='438'>Liechtenstein</country>
   <country code='lt' handle='lithuania' continent='europe' iso='440'>Lithuania</country>
   <country code='lu' handle='luxembourg' continent='europe' iso='442'>Luxembourg</country>
-  <country code='mo' handle='macau' continent='asia' iso='446'>Macau</country>
   <country code='mk' handle='macedonia-the-former-yugoslav-republic-of' continent='europe' iso='807'>Macedonia, The Former Yugoslav Republic Of</country>
   <country code='mg' handle='madagascar' continent='africa' iso='450'>Madagascar</country>
   <country code='mw' handle='malawi' continent='africa' iso='454'>Malawi</country>
@@ -121,16 +104,13 @@
   <country code='ml' handle='mali' continent='africa' iso='466'>Mali</country>
   <country code='mt' handle='malta' continent='europe' iso='470'>Malta</country>
   <country code='mh' handle='marshall-islands' continent='australasia' iso='584'>Marshall Islands</country>
-  <country code='mq' handle='martinique' continent='north america' iso='474'>Martinique</country>
   <country code='mr' handle='mauritania' continent='africa' iso='478'>Mauritania</country>
   <country code='mu' handle='mauritius' continent='africa' iso='480'>Mauritius</country>
-  <country code='yt' handle='mayotte' continent='africa' iso='175'>Mayotte</country>
   <country code='mx' handle='mexico' continent='north america' iso='484'>Mexico</country>
   <country code='fm' handle='micronesia-federated-states-of' continent='micronesia' iso='583'>Micronesia, Federated States Of</country>
   <country code='md' handle='moldova-republic-of' continent='europe' iso='498'>Moldova, Republic Of</country>
   <country code='mc' handle='monaco' continent='europe' iso='492'>Monaco</country>
   <country code='mn' handle='mongolia' continent='asia' iso='496'>Mongolia</country>
-  <country code='ms' handle='montserrat' continent='north america' iso='500'>Montserrat</country>
   <country code='ma' handle='morocco' continent='africa' iso='504'>Morocco</country>
   <country code='mz' handle='mozambique' continent='africa' iso='508'>Mozambique</country>
   <country code='mm' handle='myanmar' continent='asia' iso='104'>Myanmar</country>
@@ -138,15 +118,11 @@
   <country code='nr' handle='nauru' continent='australasia' iso='520'>Nauru</country>
   <country code='np' handle='nepal' continent='asia' iso='524'>Nepal</country>
   <country code='nl' handle='netherlands' continent='europe' alt='Nederlands NL Holland' iso='528'>Netherlands</country>
-  <country code='an' handle='netherlands-antilles' continent='north america' iso='530'>Netherlands Antilles</country>
-  <country code='nc' handle='new-caledonia' continent='australasia' iso='540'>New Caledonia</country>
   <country code='nz' handle='new-zealand' continent='australasia' iso='554'>New Zealand</country>
   <country code='ni' handle='nicaragua' continent='north america' iso='558'>Nicaragua</country>
   <country code='ne' handle='niger' continent='africa' iso='562'>Niger</country>
   <country code='ng' handle='nigeria' continent='africa' iso='566'>Nigeria</country>
   <country code='nu' handle='niue' continent='polynesia' iso='570'>Niue</country>
-  <country code='nf' handle='norfolk-island' continent='australasia' iso='574'>Norfolk Island</country>
-  <country code='mp' handle='northern-mariana-islands' continent='australasia' iso='580'>Northern Mariana Islands</country>
   <country code='no' handle='norway' continent='europe' iso='578'>Norway</country>
   <country code='om' handle='oman' continent='asia' iso='512'>Oman</country>
   <country code='pk' handle='pakistan' continent='asia' iso='586'>Pakistan</country>
@@ -156,19 +132,14 @@
   <country code='py' handle='paraguay' continent='south america' iso='600'>Paraguay</country>
   <country code='pe' handle='peru' continent='south america' iso='604'>Peru</country>
   <country code='ph' handle='philippines' continent='asia' iso='608'>Philippines</country>
-  <country code='pn' handle='pitcairn' continent='australasia' iso='612'>Pitcairn</country>
   <country code='pl' handle='poland' continent='europe' iso='616'>Poland</country>
   <country code='pt' handle='portugal' continent='europe' iso='620'>Portugal</country>
-  <country code='pr' handle='puerto-rico' continent='south america' iso='630'>Puerto Rico</country>
   <country code='qa' handle='qatar' continent='asia' iso='634'>Qatar</country>
-  <country code='re' handle='reunion' continent='africa' iso='638'>Reunion</country>
   <country code='ro' handle='romania' continent='europe' iso='642'>Romania</country>
   <country code='ru' handle='russian-federation' continent='asia' alt='Pocc' iso='643'>Russian Federation</country>
   <country code='rw' handle='rwanda' continent='africa' iso='646'>Rwanda</country>
-  <country code='sh' handle='saint-helena' continent='none' iso='654'>Saint Helena</country>
   <country code='kn' handle='saint-kitts-and-nevis' continent='north america' iso='659'>Saint Kitts And Nevis</country>
   <country code='lc' handle='saint-lucia' continent='north america' iso='662'>Saint Lucia</country>
-  <country code='pm' handle='saint-pierre-and-miquelon' continent='north america' iso='666'>Saint Pierre And Miquelon</country>
   <country code='vc' handle='saint-vincent-and-the-grenadines' continent='north america' iso='670'>Saint Vincent And The Grenadines</country>
   <country code='ws' handle='samoa' continent='africa' iso='882'>Samoa</country>
   <country code='sm' handle='san-marino' continent='europe' iso='674'>San Marino</country>
@@ -187,43 +158,33 @@
   <country code='lk' handle='sri-lanka' continent='asia' iso='144'>Sri Lanka</country>
   <country code='sd' handle='sudan' continent='africa' iso='736'>Sudan</country>
   <country code='sr' handle='suriname' continent='south america' iso='740'>Suriname</country>
-  <country code='sj' handle='svalbard-and-jan-mayen-islands' continent='europe' iso='744'>Svalbard And Jan Mayen Islands</country>
   <country code='sz' handle='swaziland' continent='africa' iso='748'>Swaziland</country>
   <country code='se' handle='sweden' continent='europe' iso='752'>Sweden</country>
   <country code='ch' handle='switzerland' continent='europe' iso='756'>Switzerland</country>
   <country code='sy' handle='syrian-arab-republic' continent='asia' iso='760'>Syrian Arab Republic</country>
-  <country code='tw' handle='taiwan-province-of-china' continent='asia' iso='158'>Taiwan, Province Of China</country>
   <country code='tj' handle='tajikistan' continent='asia' iso='762'>Tajikistan</country>
   <country code='tz' handle='tanzania-united-republic-of' continent='africa' iso='834'>Tanzania, United Republic Of</country>
   <country code='th' handle='thailand' continent='asia' iso='764'>Thailand</country>
   <country code='tg' handle='togo' continent='africa' iso='768'>Togo</country>
-  <country code='tk' handle='tokelau' continent='australasia' iso='772'>Tokelau</country>
   <country code='to' handle='tonga' continent='polynesia' iso='776'>Tonga</country>
   <country code='tt' handle='trinidad-and-tobago' continent='north america' iso='780'>Trinidad And Tobago</country>
   <country code='tn' handle='tunisia' continent='africa' iso='788'>Tunisia</country>
   <country code='tr' handle='turkey' continent='asia' iso='792'>Turkey</country>
   <country code='tm' handle='turkmenistan' continent='asia' iso='795'>Turkmenistan</country>
-  <country code='tc' handle='turks-and-caicos-islands' continent='north america' iso='796'>Turks And Caicos Islands</country>
   <country code='tv' handle='tuvalu' continent='polynesia' iso='798'>Tuvalu</country>
   <country code='ug' handle='uganda' continent='africa' iso='800'>Uganda</country>
   <country code='ua' handle='ukraine' continent='europe' iso='804'>Ukraine</country>
   <country code='ae' handle='united-arab-emirates' continent='asia' iso='784'>United Arab Emirates</country>
   <country code='gb' handle='united-kingdom' continent='europe' alt='England Scotland Wales GB UK Great Britain Britain Northern' boost='3' iso='826'>United Kingdom</country>
   <country code='us' handle='united-states' continent='north america' alt='US America USA' boost='2' iso='840'>United States</country>
-  <country code='um' handle='united-states-minor-outlying-islands' continent='north america' iso='581'>United States Minor Outlying Islands</country>
   <country code='uy' handle='uruguay' continent='south america' iso='858'>Uruguay</country>
   <country code='uz' handle='uzbekistan' continent='asia' iso='860'>Uzbekistan</country>
   <country code='vu' handle='vanuatu' continent='australasia' iso='548'>Vanuatu</country>
   <country code='va' handle='vatican-city-state' continent='europe' iso='336'>Vatican City State (Holy See)</country>
   <country code='ve' handle='venezuela' continent='south america' iso='862'>Venezuela</country>
   <country code='vn' handle='vietnam' continent='asia' iso='704'>Vietnam</country>
-  <country code='vg' handle='virgin-islands-uk' continent='europe' iso='92'>Virgin Islands (British)</country>
-  <country code='vi' handle='virgin-islands-us' continent='north america' iso='850'>Virgin Islands (U.S.)</country>
-  <country code='wf' handle='wallis-and-futuna-islands' continent='polynesia' iso='876'>Wallis And Futuna Islands</country>
   <country code='eh' handle='western-sahara' continent='africa' iso='732'>Western Sahara</country>
   <country code='ye' handle='yemen' continent='asia' iso='887'>Yemen</country>
-  <country code='yu' handle='yugoslavia' continent='europe' iso='891'>Yugoslavia</country>
-  <country code='zr' handle='zaire' continent='africa' iso='180'>Zaire</country>
   <country code='zm' handle='zambia' continent='africa' iso='894'>Zambia</country>
   <country code='zw' handle='zimbabwe' continent='africa' iso='716'>Zimbabwe</country>
 </countries>

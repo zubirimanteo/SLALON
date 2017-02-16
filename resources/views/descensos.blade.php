@@ -76,25 +76,25 @@
 @section('content')
 <div class="section cuerpo  ">
     <h1 id="nomCamp" class="header center blue-text text-darken-4">Descensos</h1>
-        <ul class="collection large">
+        <ul class="collection tablas">
             <li class="collection-item avatar">
                 <i class="material-icons circle white">perm_identity</i>
-                <table class="centered">
+                <table class="right">
                     <tbody>
                       <tr>  
                             @if (auth::guest())
                             <th><b>Nombre</b></th>
-                            <th><b>Apellidos</b></th>
+                            <th class="ocultif"><b>Apellidos</b></th>
                             <th><b>Tiempo</b></th>
                             <th><b>Penalización</b></th>
-                            <th><b>Tiempo Final</b></th>
+                            <th><b>T. Final</b></th>
                             <th><b>Descendiendo</b></th>
                             @else
                             <th><b>Nombre</b></th>
-                            <th><b>Apellidos</b></th>
+                            <th class="ocultif"><b>Apellidos</b></th>
                             <th><b>Tiempo</b></th>
                             <th><b>Penalización</b></th>
-                            <th><b>Tiempo Final</b></th>
+                            <th><b>T. Final</b></th>
                             <th><b>Descendiendo</b></th>
                             @endif
                       </tr>
@@ -121,18 +121,18 @@
                 <table class="centered">
                  <tbody>
                   <tr id="{{$d->numero_descendiente}}">
-                    <td class="edit" contenteditable="false">{{$d->nombre}}</td> 
-                    <td class="edit" contenteditable="false">{{$d->apellido}} {{$d->apellido2}}</td>
-                    <td id="tiempo" class="edit">{{$d->tiempo}}</td>
-                    <td id="penalizacion" class="edit">+{{$d->penalizacion}}</td>
-                    <td id="tiempoFinal" class="edit">{{$d->tiempoFinal}}</td>
+                    <td class="edit center" contenteditable="false">{{$d->nombre}}</td> 
+                    <td class="edit center ocultif" contenteditable="false">{{$d->apellido}} {{$d->apellido2}}</td>
+                    <td id="tiempo" class="edit center">{{$d->tiempo}}</td>
+                    <td id="penalizacion" class="edit center">+{{$d->penalizacion}}</td>
+                    <td id="tiempoFinal" class="edit center">{{$d->tiempoFinal}}</td>
                     <td id="estado">
                         @if ($d->estado == 'terminado')
-                        <img src="/storage/descendiendo/finish.png" class="responsive-img"></img>
+                        <img src="/storage/descendiendo/finish.png" class="actualizerDesc center"></img>
                         @elseif ($d->estado == 'parado')
-                        <img src="/storage/descendiendo/stop.png" class="responsive-img"></img>
+                        <img src="/storage/descendiendo/stop.png" class="actualizerDesc center"></img>
                         @elseif ($d->estado == 'descendiendo')
-                        <img src="/storage/descendiendo/ready.png" class="responsive-img"></img>
+                        <img src="/storage/descendiendo/ready.png" class="actualizerDesc center"></img>
                         @endif
                     </td>
                   </tr>

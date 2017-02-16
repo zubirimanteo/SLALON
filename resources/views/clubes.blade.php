@@ -1,5 +1,82 @@
 @extends('layout')
 
+@section('script')
+
+<script type="text/javascript">
+  
+  $(document).ready(function(){
+        function getXMLHTTPRequest(){
+            versiones = ["MSXML2.XMLHttp.5.0", "MSXML2.XMLHttp.4.0",
+            "MSXML2.XMLHttp.3.0", "MSXML2.XMLHttp",
+            "Microsoft.XMLHttp"];
+                    if(typeof XMLHttpRequest != "undefined"){
+                    return new XMLHttpRequest();
+                    } else {
+                    for (var i = 0; i < versiones.length; i++) {
+                    try{
+                    req = new ActiveXObject(versiones[i]);
+                    return req;
+                    } catch (err1) {
+                    // Esto evita que se genere un error y pare la ejec.
+                    }
+                }
+            }
+        }
+        
+        function inicializar(url){
+            http=getXMLHTTPRequest();
+            http.onreadystatechange = procesarEvento;
+            http.open("GET", url, true);
+            http.send(null);
+            tiempo=setTimeout("finDeEspera()",3000);
+        }
+        function procesarEvento(){
+            var detalles = document.getElementById("detalles");
+            if(http.readyState == 4){
+                if(http.status==200) {
+                    clearTimeout(tiempo);
+                    // Aquí escribiremos lo que queremos que se
+                    //ejecute tras recibir la respuesta
+                    xmlFuntzioa(this);
+                } else {
+                    // Ha ocurrido un error
+                    alert("Error: "+http.statusText);
+                }
+            }
+        }
+        function finDeEspera(){
+            http.abort();
+            // Mostrar mensaje de sobrecarga del servidor
+            // o en la pagina HTML
+            alert('Intente nuevamente más tarde');
+        }
+        function xmlFuntzioa(xml) {
+            var i;
+            var xmlDoc = xml.responseXML;
+            var cartel = "";
+            var x = xmlDoc.getElementsByTagName("country");
+            for (i = 0; i <x.length; i++) {
+
+ 
+           var code = x[i].getAttribute('code');
+            var j = xmlDoc.getElementsByTagName("country")[i];
+            var k = j.childNodes[0];
+            var l = k.nodeValue;
+            $('#nacionalidad').append($('<option>', { 
+                value: code,
+                text : l 
+            }));
+
+            }
+ 
+        }
+inicializar('./countries.xml');
+});
+  
+</script>
+
+@stop
+
 @section('navbar')
 
 <nav>
@@ -87,9 +164,8 @@
         <br>
         <br>
         <div class="input-field col s6 offset-s3 espaciado">
-          <select class="browser-default s6 offset-s3" name="nacionalidad">
+          <select id="nacionalidad" class="browser-default s6 offset-s3" name="nacionalidad">
             <option value="" disabled selected>Elija la Nacionalidad</option>
-            <option value=""></option>
           </select>
         </div>
         <div class="input-field col s6 offset-s3 espaciado">

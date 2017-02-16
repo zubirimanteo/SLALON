@@ -66,7 +66,7 @@
 <div class="section cuerpo">
 <h1 id="nomCamp" class="header bold center blue-text text-darken-4 ">Participantes</h1>
 
-<ul class="collection large">
+<ul class="collection">
     <li class="collection-item avatar">
         <i class="material-icons circle white">perm_identity</i>
         <table class="centered">
@@ -81,10 +81,9 @@
             </tbody>
         </table>
     </li>
-    <br>
 @foreach ($users as $user)
     <li class="collection-item avatar ">
-        <img  src="{{$user->avatar_piraguista}}" alt="" class="circle materialboxed">
+        <img  src="{{$user->avatar_piraguista}}"  alt="" align="bottom" class="circle materialboxed">
         <table class="centered">
          <tbody>
           <tr>
@@ -92,7 +91,7 @@
             <td>{{$user->nombre}}</td>
             <td>{{$user->apellido}} {{$user->apellido2}}</td>
             <td>{{$user->club}}</td>
-            <td>{{$user->nacionalidad}}</td>
+            <td><img src="/storage/countries/{{$user->nacionalidad}}.png" style="height:40px; width:60px;"></td>
           </tr>
         </tbody>
       </table>
