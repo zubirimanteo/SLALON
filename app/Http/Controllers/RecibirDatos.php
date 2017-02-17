@@ -72,22 +72,40 @@ class RecibirDatos extends Controller
         
         else{
             
-            //ultimo registro para saber que descenso actualizar
-            $lastRegistro = DB::table('tablanms')
-            ->where('id_nm', '=', DB::table('tablanms')->max('tablanms.id_nm'))
-            ->get();
+            //BUSCAR ULTIMO REGISTRO
+                    //ultimo registro para saber que descenso actualizar
+                    $lastRegistro = DB::table('tablanms')
+                    ->where('id_nm', '=', DB::table('tablanms')->max('tablanms.id_nm'))
+                    ->get();
+                    
+                    foreach($lastRegistro as $lastRegistro){
+                        $id_lastDescenso = $lastRegistro->id_descenso;
+                        $id_lastBaliza = $lastRegistro->id_baliza;
+                    }
+                    
+                    //crear evento del dato recibido en la base de datos
+                    $evento = tablanm::create([
+                        'id_baliza' => $id,
+                        'id_descenso' => $id_lastDescenso,
+                        'dato_paso' => $sensor,
+                        'dato_vibracion' => 0,
+                    ]);
             
-            foreach($lastRegistro as $lastRegistro){
-                $id_lastDescenso = $lastRegistro->id_descenso;
-            }
+            //SABER SI ES REMONTE
             
-            //crear evento del dato recibido en la base de datos
-            $evento = tablanm::create([
-                'id_baliza' => $id,
-                'id_descenso' => $id_lastDescenso,
-                'dato_paso' => $sensor,
-                'dato_vibracion' => 0,
-            ]);
+                    // $baliza = DB::table('balizas')
+                    // ->where('id_baliza', '=', $id)
+                    // ->get();
+                    // foreach ($baliza as $baliza) {
+                    //     $remonte = $baliza->remonte;
+                    // }
+           
+            //CONTROLAR QUE NO SE HAYA SALTADO LA ULTIMA PUERTA
+            
+                    
+           
+            
+            
             
             //saber cual es el inicio de la carrera
             $inicioCarrera = DB::table('tablanms')

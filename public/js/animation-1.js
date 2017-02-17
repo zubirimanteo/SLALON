@@ -20,7 +20,8 @@ $(document).ready(function(){
       $(this).parents('li').detach();
     });
    
-  
+  document.getElementById("myVideo").width=document.body.offsetWidth;
+  document.getElementById("myVideo").height=document.body.offsetheight;
   
   
 });

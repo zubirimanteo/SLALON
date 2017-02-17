@@ -80,7 +80,7 @@
         </div>
         <div class="parallax">
           <!--<img class="imagenCab"  src="/imgs/rio.gif"></div>-->
-          <video src="/imgs/Webface.mp4" class="imagenCab responsive-video"  autoplay loop></video>
+          <video src="/imgs/Webface.mp4" class="imagenCab responsive-video" id="myvideo"  autoplay loop></video>
       </div>
   </div>
   
@@ -92,7 +92,7 @@
           <div class="card">
             <div class="card-image ">
               <a href="{{ url('/descensos')}}/{{$carrera->id_carrera}}"><img src="{{$carrera->avatar_carrera}}"></a>
-              <span class="card-title"><a href="{{ url('/descensos')}}/{{$carrera->id_carrera}}" id="nomCamp" class="card-action orange-text text-darken-4" >{{$carrera->lugar}}</a></span>
+              <span class="card-title"><a href="{{ url('/descensos')}}/{{$carrera->id_carrera}}" id="nomCamp2" class="card-action orange-text text-darken-4" >{{$carrera->lugar}}</a></span>
             </div>
           </div>
         </div>

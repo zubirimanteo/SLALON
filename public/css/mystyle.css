@@ -41,7 +41,13 @@
     webkit-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
     -moz-box-shadow:0 0px 4px #777, 0 0 20px #CCC inset;
     box-shadow:0 0px 4px #777, 0 0 20px #CCC inset; 
-}
+    
+    }
+     #nomCamp2{
+        font-family: 'Permanent Marker', cursive;
+        -webkit-text-stroke: 0.9px black;
+        font-size:1.5em;
+    }
 }
 @media only screen and (max-width: 1024px) and  (max-height: 1366px)  {
  .imagenCab{
@@ -83,6 +89,11 @@
     padding-left: 0px;
     position: relative;
     }
+     #nomCamp2{
+        font-family: 'Permanent Marker', cursive;
+        -webkit-text-stroke: 0.9px black;
+        font-size:2em;
+    }
    
 }
 @media only screen and (max-width: 1024px) and  (max-height: 1366px)  {
@@ -90,6 +101,11 @@
         font-family: 'Permanent Marker', cursive;
         -webkit-text-stroke: 2.5px black;
         padding-top: 100px;
+    }
+     #nomCamp2{
+        font-family: 'Permanent Marker', cursive;
+        -webkit-text-stroke: 0.9px black;
+        font-size:2em;
     }
 }
 
@@ -117,6 +133,11 @@
     -moz-box-shadow: 0 0px 4px #777, 0 0 20px #CCC inset;
     box-shadow: 0 0px 4px #777, 0 0 20px #CCC inset;
     }
+     #nomCamp2{
+        font-family: 'Permanent Marker', cursive;
+        -webkit-text-stroke: 0.9px black;
+        font-size:2em;
+    }
 }
 
 @media only screen and (max-width: 768px)and (max-height: 1024px){
@@ -129,10 +150,10 @@
 .parallax-container {
     position: relative;
     overflow: hidden;
-    height: 350px;
+    height: 350px !important;
 }  
 #nomCampa{
-    padding-top: 100px;
+    padding-top: 50px;
 }
 .tablas {
     width: 97%  !important;
@@ -148,26 +169,39 @@
     -moz-box-shadow: 0 0px 4px #777, 0 0 20px #CCC inset;
     box-shadow: 0 0px 4px #777, 0 0 20px #CCC inset;
 }
+ #nomCamp2{
+        font-family: 'Permanent Marker', cursive;
+        -webkit-text-stroke: 0.9px black;
+        font-size:1.8em;
+    }
 }
-@media only screen and (max-width: 414px) and (max-height: 736px){
+@media only screen and (max-width: 412px) and (max-height: 732px){
 .imagenCab{
     height:100% !important;
     width: 100% !important;
-    padding-top: 100px;
+    padding-top: 200px;
     margin-bottom:300px;
     }
 .parallax-container {
     position: relative;
     overflow: hidden;
-    height: 180px;
-    
+    height: 200px!important;
     }
+.parallax{
+     height: 200px;
+}
 video{
     height:500px !important;
 }
 #nomCampa {
-    padding-top:10px;
-    display: none;
+    /*padding-top:10px;*/
+   /* display: none;*/
+   
+}
+#nomCampa {
+    font-family: 'Permanent Marker', cursive;
+    -webkit-text-stroke: 2.5px black;
+    padding-top: 50px;
 }
 .cuerpo {
     padding: 50px;
@@ -182,15 +216,25 @@ video{
  #titles{
          display:none;
     }
+     #nomCamp2{
+        font-family: 'Permanent Marker', cursive;
+        -webkit-text-stroke: 0.9px black;
+        font-size:1.8em;
+    }
 }
 @media only screen and (max-width: 736px)and (max-height:414px){
  .imagenCab{
     height: 500px;
-    width: 100% !important;
+    width: 180% !important;
     margin-bottom:1px;  
     }
      #titles{
          display:none;
+    }
+     #nomCamp2{
+        font-family: 'Permanent Marker', cursive;
+        -webkit-text-stroke: 0.9px black;
+        font-size:1.3em;
     }
 }
 @media only screen and (max-width: 375px)and (max-height:667px){
@@ -209,6 +253,11 @@ video{
      #titles{
          display:none;
     }
+     #nomCamp2{
+        font-family: 'Permanent Marker', cursive;
+        -webkit-text-stroke: 0.9px black;
+        font-size:1.2em;
+    }
 }
 @media only screen and (max-width: 667px)and (max-height:375px){
     
@@ -218,6 +267,11 @@ video{
     .tablas{
     width: 97% !important;
     left: 2% !important;
+    }
+     #nomCamp2{
+        font-family: 'Permanent Marker', cursive;
+        -webkit-text-stroke: 0.9px black;
+        font-size:1.2em;
     }
 }
 @media only screen and (max-width: 375px)and (max-height:667px){
@@ -236,12 +290,22 @@ video{
     padding:10px;
     margin:auto;
     }
+    #nomCamp2{
+        font-family: 'Permanent Marker', cursive;
+        -webkit-text-stroke: 0.9px black;
+        font-size:1em;
+    }
 }/*pantalla pequeñña**/
 @media only screen and (max-width: 360px)and (max-height:640px){
     #nomCamp {
     font-family: 'Permanent Marker', cursive;
     -webkit-text-stroke: 0.9px black;
     font-size:3.5em;
+    }
+    #nomCamp2{
+        font-family: 'Permanent Marker', cursive;
+        -webkit-text-stroke: 0.9px black;
+        font-size:1em;
     }
     .collection .collection-item.avatar {
     min-height: 84px;
@@ -252,7 +316,7 @@ video{
     .cuerpo{
     padding:10px !important;
     margin:auto;
-    border:solid;
+    
     }
 }
 video {
@@ -265,6 +329,11 @@ video {
     right: 0;
     width: auto;
     z-index: -100;
+}
+.parallax-container {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
 }
 .logo{
     width:50px;
@@ -283,7 +352,7 @@ video {
 #nomCampa{
         font-family: 'Permanent Marker', cursive;
         -webkit-text-stroke: 2.5px black;
-        padding-top: 100px;
+        padding-top: 50px;
     }
 #nomInsc{
     font-family: 'Pacifico', cursive;
@@ -494,4 +563,14 @@ img.responsive-img, video.responsive-video {
 .actualizerDesc{
     width:50px;
     height:50px;
+}
+#nomCamp2 {
+    font-family: 'Permanent Marker', cursive;
+    -webkit-text-stroke: 0.9px black;
+    font-size: 1.5em;
+}
+
+.section {
+    padding-top: 1rem;
+    padding-bottom: 6rem;
 }

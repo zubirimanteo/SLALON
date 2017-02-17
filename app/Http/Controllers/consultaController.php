@@ -28,8 +28,13 @@ class consultaController extends Controller
         
         foreach($remonte as $remonte){
             $remonte=$remonte->remonte;
-            $remonte=$remonte.'';
-            return $remonte;
+            if($remonte){
+                return 1;
+            }
+            else{
+                return 0;
+            }
+            
         } 
         
     

@@ -50,13 +50,13 @@ datos=JSON.parse(data);
 $('#'+ datos['idDescenso']+' #tiempo').html(datos["tiempo"]);
 $('#'+ datos['idDescenso']+' #tiempoFinal').html(datos["tiempoFinal"]);
 if(datos["estado"]=="terminado"){
-  $('#'+ datos['idDescenso']+' #estado').html('<img src="/storage/descendiendo/finish.png" class="responsive-img"></img>');
+  $('#'+ datos['idDescenso']+' #estado').html('<img src="/storage/descendiendo/finish.png" class="actualizerDesc center"></img>');
 }
 else if(datos["estado"]=="parado"){
-  $('#'+ datos['idDescenso']+' #estado').html('<img src="/storage/descendiendo/stop.png" class="responsive-img"></img>');
+  $('#'+ datos['idDescenso']+' #estado').html('<img src="/storage/descendiendo/stop.png" class="actualizerDesc center"></img>');
 }
 else if(datos["estado"]=="descendiendo"){
-  $('#'+ datos['idDescenso']+' #estado').html('<img src="/storage/descendiendo/ready.png" class="responsive-img"></img>');
+  $('#'+ datos['idDescenso']+' #estado').html('<img src="/storage/descendiendo/ready.png" class="actualizerDesc center"></img>');
 }
 
 });   
@@ -66,13 +66,13 @@ $('#'+ datos['idDescenso']+' #tiempo').html(datos["tiempo"]);
 $('#'+ datos['idDescenso']+' #penalizacion').html(datos["penalizacion"]);
 $('#'+ datos['idDescenso']+' #tiempoFinal').html(datos["tiempoFinal"]);
 if(datos["estado"]=="terminado"){
-  $('#'+ datos['idDescenso']+' #estado').html('<img src="/storage/descendiendo/finish.png" class="responsive-img"></img>');
+  $('#'+ datos['idDescenso']+' #estado').html('<img src="/storage/descendiendo/finish.png" class="actualizerDesc center"></img>');
 }
 else if(datos["estado"]=="parado"){
-  $('#'+ datos['idDescenso']+' #estado').html('<img src="/storage/descendiendo/stop.png" class="responsive-img"></img>');
+  $('#'+ datos['idDescenso']+' #estado').html('<img src="/storage/descendiendo/stop.png" class="actualizerDesc center"></img>');
 }
 else if(datos["estado"]=="descendiendo"){
-  $('#'+ datos['idDescenso']+' #estado').html('<img src="/storage/descendiendo/ready.png" class="responsive-img"></img>');
+  $('#'+ datos['idDescenso']+' #estado').html('<img src="/storage/descendiendo/ready.png" class="actualizerDesc center"></img>');
 }
 });  
 
