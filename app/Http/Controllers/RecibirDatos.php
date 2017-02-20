@@ -86,24 +86,6 @@ class RecibirDatos extends Controller
                         $lastSensor = $lastRegistro->dato_paso;
                     }
             
-            //CREAR EL EVENTO 
-            
-                //crear evento del dato recibido en la base de datos
-                    $evento = tablanm::create([
-                        'id_baliza' => $id,
-                        'id_descenso' => $id_lastDescenso,
-                        'dato_paso' => $sensor,
-                        'dato_vibracion' => 0,
-                    ]);
-            
-            //SABER SI ES REMONTE
-                //SELECT LA ACTUAL BALIZA
-                    $baliza = DB::table('balizas')
-                    ->where('id_baliza', '=', $id)
-                    ->get();
-                    foreach ($baliza as $baliza) {
-                        $remonte = $baliza->remonte;
-                    }
                 //SELECT EL ACTUAL DESCENSO    
                     $penDescenso = DB::table('descensos')
                     ->where('id_descenso', '=', $id_lastDescenso)
@@ -116,7 +98,50 @@ class RecibirDatos extends Controller
                     $tmpP = strtotime($tmpP);
                     $penal = strtotime($penal);
                     
-                
+            //CONTROLAR QUE NO SE HAYA SALTADO LA ULTIMA PUERTA
+            
+                    $saltoPuerta = $id-$id_lastBaliza;    
+                    if($saltoPuerta>1){
+                        for($i = 0; $i < $saltoPuerta-1; $i++){
+                            //PENALIZAR REGISTRO CON ID_LASTBALIZA+$I+1
+                            
+                                //CREAR EVENTO PENALIZADO
+                                $evento = tablanm::create([
+                                    'id_baliza' => $id_lastBaliza+$i+1,
+                                    'id_descenso' => $id_lastDescenso,
+                                    'dato_paso' => 'penalizado',
+                                    'dato_vibracion' => 0,
+                                ]);
+                                
+                                //PENALIZAR EL TIEMPO EN EL DESCENSO
+                                
+                                $tmpP = $tmpP + $penal;
+                                $tmpP=gmdate('H:i:s', $tmpP);
+                                        
+                                $penalizar = DB::table('descensos')
+                                ->where('id_descenso', '=', $id_lastDescenso)
+                                ->update(['penalizacion' => $tmpP]);
+                        }
+                    }
+            //CREAR EL EVENTO 
+            
+                //crear evento del dato recibido en la base de datos
+                    $evento = tablanm::create([
+                        'id_baliza' => $id,
+                        'id_descenso' => $id_lastDescenso,
+                        'dato_paso' => $sensor,
+                        'dato_vibracion' => 0,
+                    ]);
+                    
+            //SABER SI ES REMONTE
+                //SELECT LA ACTUAL BALIZA
+                    $baliza = DB::table('balizas')
+                    ->where('id_baliza', '=', $id)
+                    ->get();
+                    foreach ($baliza as $baliza) {
+                        $remonte = $baliza->remonte;
+                    }
+                    
                     if($remonte){
                         
                         //SI EL ANTERIOR REGISTRO ES DE LA MISMA BALIZA, CONTROLAR QUE SIGUE CORRECTAMENTE
@@ -140,6 +165,7 @@ class RecibirDatos extends Controller
                                         ->update(['penalizacion' => $tmpP]);
                                     
                             }
+                            
                             elseif($lastSensor == 's1' or $lastSensor == 's2'){
                                 if($sensor == 's1' or $sensor == 's2')
                                     //PENALIZAR EVENTO PARA QUE NO SALTE EN LAS CONDICIONES
@@ -157,6 +183,14 @@ class RecibirDatos extends Controller
                                         ->where('id_descenso', '=', $id_lastDescenso)
                                         ->update(['penalizacion' => $tmpP]);
                                         
+                            }
+                            
+                            //SI EL ANTERIOR REGISTRO ESTA PENALIZADO VOLVER A PENALIZAR EL REGISTRO
+                            elseif($lastSensor == 'penalizado'){
+                                //PENALIZAR EVENTO PARA QUE NO SALTE EN LAS CONDICIONES
+                                $penalizado = DB::table('tablanms')
+                                ->where('id_baliza', '=', $id)
+                                ->update(['dato_paso' => 'penalizado']);
                             }
                             
                         }
@@ -181,31 +215,7 @@ class RecibirDatos extends Controller
                         }
                     }
                     
-            //CONTROLAR QUE NO SE HAYA SALTADO LA ULTIMA PUERTA
             
-                    $saltoPuerta = $id-$id_lastBaliza;    
-                    if($saltoPuerta>1){
-                        for($i = 0; $i < $saltoPuerta; $i++){
-                            //PENALIZAR REGISTRO CON ID_LASTBALIZA+$I+1
-                            
-                                //CREAR EVENTO PENALIZADO
-                                $evento = tablanm::create([
-                                    'id_baliza' => $id+$i+1,
-                                    'id_descenso' => $id_lastDescenso,
-                                    'dato_paso' => 'penalizado',
-                                    'dato_vibracion' => 0,
-                                ]);
-                                
-                                //PENALIZAR EL TIEMPO EN EL DESCENSO
-                                
-                                $tmpP = $tmpP + $penal;
-                                $tmpP=gmdate('H:i:s', $tmpP);
-                                        
-                                $penalizar = DB::table('descensos')
-                                ->where('id_descenso', '=', $id_lastDescenso)
-                                ->update(['penalizacion' => $tmpP]);
-                        }
-                    }
             
             //ACTUALIZAR EL TIEMPO SOLO    
                 //SELECT INICIO DE LA CARRERA
@@ -257,9 +267,10 @@ class RecibirDatos extends Controller
                 ->where('id_descenso', '=', $id_lastDescenso)
                 ->update(['tiempoFinal' => $tmpF]);
                 
+            //FINAL DE LA CARRERA
                 if($id!=5){
                     //crear un json para enviarlo a las demas paginas
-                    $arr = array('idDescenso' => $id_lastDescenso, 'tiempo' => $tmp, 'tiempoFinal' => $tmpF, 'estado' => $estado);
+                    $arr = array('idDescenso' => $id_lastDescenso, 'tiempo' => $tmp, 'penalizacion' => $tmpP, 'tiempoFinal' => $tmpF, 'estado' => $estado);
                     $datos=json_encode($arr);
                     //mandar mensaje
                     $pusher->trigger('my-channel', 'eventoPaso', $datos);
@@ -270,11 +281,11 @@ class RecibirDatos extends Controller
                     ->where('id_descenso', '=', $id_lastDescenso)
                     ->update(['estado' => 'terminado']);
                     //crear un json para enviarlo a las demas paginas
-                    $arr = array('idDescenso' => $id_lastDescenso, 'tiempo' => $tmp, 'tiempoFinal' => $tmpF, 'estado' => 'terminado');
+                    $arr = array('idDescenso' => $id_lastDescenso, 'tiempo' => $tmp, 'penalizacion' => $tmpP, 'tiempoFinal' => $tmpF, 'estado' => 'terminado');
                     $datos=json_encode($arr);
                     //mandar mensaje
                     $pusher->trigger('my-channel', 'eventoPaso', $datos);
-                }
+                }//CONTORLAR FINAL DE LA CARRRERA
 
             
         }//if($id == 1) 

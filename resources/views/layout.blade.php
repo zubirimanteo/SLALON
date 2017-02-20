@@ -20,7 +20,7 @@
 <body class="blue-grey lighten-5">
 <!--scripts-->
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
 <!--<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 <script type="text/javascript" src="/js/animation.js"></script>
@@ -48,6 +48,7 @@ var channel = pusher.subscribe('my-channel');
 channel.bind('eventoPaso', function(data) {
 datos=JSON.parse(data);
 $('#'+ datos['idDescenso']+' #tiempo').html(datos["tiempo"]);
+$('#'+ datos['idDescenso']+' #penalizacion').html(datos["penalizacion"]);
 $('#'+ datos['idDescenso']+' #tiempoFinal').html(datos["tiempoFinal"]);
 if(datos["estado"]=="terminado"){
   $('#'+ datos['idDescenso']+' #estado').html('<img src="/storage/descendiendo/finish.png" class="actualizerDesc center"></img>');
@@ -115,7 +116,7 @@ else if(datos["estado"]=="descendiendo"){
               </div>
               <div class="caja-redes col s12 m6 l4 center">
                 <h4 class="blue-grey-text text-lighten-3">Encuentranos</h4>
-               <a href="https://twitter.com/SlasportSP" class="icon-button twitter"><i class="icon-twitter"></i><span></span></a>
+               <a href="#" class="icon-button twitter"><i class="icon-twitter"></i><span></span></a>
                <a href="#" class="icon-button facebook"><i class="icon-facebook"></i><span></span></a>
                <a href="#" class="icon-button google-plus"><i class="icon-google-plus"></i><span></span></a>
               </div>
