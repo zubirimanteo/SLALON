@@ -7,7 +7,7 @@ $(document).ready(function(){
      
     $('#editar-btn').click(function() {
      
-     $('.edit').attr('contenteditable','true');
+    $('.edit').attr('contenteditable','true');
      
     });
     

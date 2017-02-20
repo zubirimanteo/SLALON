@@ -22,7 +22,6 @@
                 }
             }
         }
-        
         function inicializar(url){
             http=getXMLHTTPRequest();
             http.onreadystatechange = procesarEvento;

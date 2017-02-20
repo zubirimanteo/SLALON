@@ -36,7 +36,11 @@
         channel.bind('getConsulta', function(data) {
             alert(data);
         });
-        channel.bind('evento', function(data) {
+        channel.bind('eventoPaso', function(data) {
+            alert(data);
+            //document.getElementById('body').innerHTML = data;
+        });
+        channel.bind('eventoVibracion', function(data) {
             alert(data);
             //document.getElementById('body').innerHTML = data;
         });
