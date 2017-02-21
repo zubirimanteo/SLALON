@@ -114,7 +114,7 @@ class RecibirDatos extends Controller
                                 ]);
                                 
                                 //PENALIZAR EL TIEMPO EN EL DESCENSO
-                                
+                                $tmpP = strtotime($tmpP);
                                 $tmpP = $tmpP + $penal;
                                 $tmpP=gmdate('H:i:s', $tmpP);
                                         
