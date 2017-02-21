@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
         ]);
         DB::table('balizas')->insert([
             'id_baliza' => 4,
-            'remonte' => 0,
+            'remonte' => 1,
         ]);
         DB::table('balizas')->insert([
             'id_baliza' => 5,

@@ -110,8 +110,7 @@ else if(datos["estado"]=="descendiendo"){
                 <!--<i class="large material-icons blue-grey-text text-lighten-3 iconos">person</i>-->
                 <h4 class="blue-grey-text text-lighten-3 ">¿Quiénes Somos?</h4>
                 <p class="blue-grey-text text-lighten-3">
-                  Somos un grupo de estudiantes de dos Instituciones diferentes
-                  Zubiri Manteo y Don Bosco. 
+                  Somos un grupo de estudiantes de dos centros educativos IES Zubiri Manteo y CIFP Don Bosco. Tenemos ideas inovadoras y ganas de poner nuestras ideas en practica. 
                 </p>
               </div>
               <div class="caja-redes col s12 m6 l4 center">
@@ -123,6 +122,8 @@ else if(datos["estado"]=="descendiendo"){
               <div class="col s12 m6 l4 center">
                   <h4 class="blue-grey-text text-lighten-3 ">Contactanos</h4>
                   <p class="blue-grey-text text-lighten-3">
+                    Quieres formar parte de nuestra aplicacion y tener todas las facilidades que te proporciona la misma?
+                    Ponte en contacto con nosotros mediante nuestro correo slasport@gmail.com o nuestro telefono 615091286.
                   </p>
               </div>
             </div>
