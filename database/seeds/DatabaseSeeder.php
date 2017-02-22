@@ -42,5 +42,12 @@ class DatabaseSeeder extends Seeder
             'admin' => 1,
             'password' => bcrypt('slasport'),
         ]);
+         DB::table('users')
+        ->insert([
+            'name' => 'equipo',
+            'email' => 'equipo@slasport.com',
+            'admin' => 1,
+            'password' => bcrypt('equipo'),
+        ]);
     }
 }

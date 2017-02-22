@@ -28,7 +28,7 @@ return [
     //COMENTAU BAT EDO BESTEAHERO
     'default' => env(
                      'DB_CONNECTION'
-                    //  'MYSQL_DB_CONNECTION'
+                    //   'MYSQL_DB_CONNECTION'
                      ),
 
     /*
