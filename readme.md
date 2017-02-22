@@ -1,6 +1,6 @@
 # SLASPORT
 
-![Heroku](https://proyect76.herokuapp.com)
+[Heroku](https://proyect76.herokuapp.com)
 
 El objetivo de este proyecto, es la automatización de un sistema de control de una competición de piragüismo de la modalidad de aguas bravas, utilizando para ello un sistema electrónico junto a una aplicación web.
 
