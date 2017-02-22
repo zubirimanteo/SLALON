@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
         ->insert([
             'name' => 'equipo',
             'email' => 'equipo@slasport.com',
-            'admin' => 1,
+            'admin' => 0,
             'password' => bcrypt('equipo'),
         ]);
     }
