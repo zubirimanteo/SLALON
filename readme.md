@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-
-=======
 # [SLASPORT](https://proyect76.herokuapp.com)
 
 ##Descripcion
