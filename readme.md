@@ -30,9 +30,9 @@ composer install
 mv .env\ example .env
 el .env actual utiliza las credenciales de desarrollo de c9 con nuestras api keys.
 
-# Migrar la base de datos borrando y volviendo a instalar con :refresh y llenandola con --seed
+# Migrar la base de datos borrando y volviendo a instalar con :rollback y llenandola con --seed
 
-php artisan migrate[:refresh][--seed]
+php artisan migrate[:rollback][--seed]
 ejecutar servidor php ---> php artisan serve
 ```
 #Estructura del proyecto
