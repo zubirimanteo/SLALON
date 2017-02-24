@@ -1,7 +1,7 @@
 
 # [SLASPORT](https://proyect76.herokuapp.com)
 
-##Descripcion
+#Descripcion
 
 El objetivo de este proyecto, es la automatización de un sistema de control de una competición de piragüismo de la modalidad de aguas bravas, utilizando para ello un sistema electrónico junto a una aplicación web.
 
@@ -11,7 +11,7 @@ Además de dicho sistema, se ha creado una aplicación web para una perfecta vis
 
 Por otro lado, en esta web se ofrece a los participantes o clubes la posibilidad de inscribirse a las diferentes pruebas.
 
-##Instalación
+#Instalación
 
 La manera más sencilla de empezar es clonando el repositorio
 
@@ -84,7 +84,7 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
 
-## Official Documentation
+# Official Documentation
 
 Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
 
