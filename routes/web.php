@@ -71,4 +71,7 @@ use Illuminate\Support\Facades\App;
 
 //RUTAS DE PRUEBA
 
+    Route::get('/simulador', function(){
+        return view('simulador');
+    })
 ?>

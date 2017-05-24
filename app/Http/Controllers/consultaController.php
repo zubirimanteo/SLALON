@@ -20,7 +20,7 @@ class consultaController extends Controller
         $pusher = App::make('pusher');
         
         $texto = 'recibo el dato';
-        $pusher->trigger('my-channel', 'getConsulta', $texto); 
+        $pusher->trigger('my-channel', 'getConsulta', $id); 
         
         $remonte = DB::table('balizas')
         ->where('balizas.id_baliza', '=', $id)
